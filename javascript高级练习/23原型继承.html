@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //抽取公共 放入原型
+        const Person={
+            eays:2,
+            head:1
+        }
+        //构造公共的属性函数
+        function Person1 (){
+            this.eays=2
+            this.head=1
+        }
+        //继承公共 
+        function Woman() {
+            // this.eays = 2
+            // this.head = 1
+        }
+        // Woman.prototype=Person
+        Woman.prototype= new Person1()
+        //指回原来的构造函数
+        Woman.prototype.constructor=Woman
+        // 当两个都放入同一个属性对象时给其中一个加值就全家
+        Woman.prototype.bady=function(){
+            console.log('shsdad1')
+        }
+        //男人
+        function Man() {
+            // this.eays = 2
+            // this.head = 1
+        }
+        // Man.prototype=Person
+        Man.prototype=new Person1()
+        //指回原来的构造函数
+        Man.prototype.constructor=Man
+        const red = new Woman()
+        const pink = new Man()
+        console.log(red)
+        console.log(pink)
+    </script>
+</body>
+
+</html>

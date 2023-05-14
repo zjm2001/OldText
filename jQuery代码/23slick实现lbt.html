@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./slick/slick.css">
+<link rel="stylesheet" href="./slick/slick-theme.css">
+<style>
+    body {
+      background-color: #ccc;
+    }
+    .slider {
+      width: 640px;
+      height: 360px;
+      margin: 0 auto;
+    }
+    .slider img{
+        width: 100%;
+        height: 360px;
+    }
+    .control {
+      display: flex;
+      justify-content: space-between;
+    }
+    .prev,
+    .next {
+      font-size: 40px;
+      color: red;
+    }
+    .slick-dots {
+      bottom: 0;
+    }
+    .slick-dots li.slick-active button:before {
+      color: yellowgreen;
+    }
+  </style>
+<body>
+
+    <div class="slider-container">
+        <!-- 轮播图区域 -->
+        <div class="slider">
+          <div><img src="../AlloyTeam响应式/uploads/banner_1.jpg" alt="" /></div>
+          <div><img src="../AlloyTeam响应式/uploads/banner_2.jpg" alt="" /></div>
+          <div><img src="../AlloyTeam响应式/uploads/banner_3.jpg" alt="" /></div>
+          <div><img src="../AlloyTeam响应式/uploads/banner_4.jpg" alt="" /></div>
+          
+        </div>
+        <!-- 自定义左右箭头 -->
+        <div class="control">
+          <div class="prev">上一个</div>
+          <div class="next">下一个</div>
+        </div>
+      </div>
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./slick/slick.min.js"></script>
+    <script>
+$('.slider').slick({
+    autoplay:true,    //自动轮播
+    // arrows:false,      //左右箭头
+    prevArrow:'.prev', //自定义箭头
+    nextArrow:'.next',
+    dots:true               //小圆点
+})
+    </script>
+</body>
+</html>

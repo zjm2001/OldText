@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .box {
+        width: 600px;
+        margin: 20px auto;
+        border: 1px solid #bbb;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    table {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    td {
+        text-align: left;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <h2>注册表单</h2>
+        <form action="" method="post">
+            <table>
+                <tr>
+                    <td>用户名:</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>密码:</td>
+                    <td><input type="password"></td>
+                </tr>
+                <tr>
+                    <td>性别:</td>
+                    <td style="text-align: left;">
+                        <label for="one">男 <input type="radio" id="one" name="sex" checked></label>
+                        <label for="two"> 女<input type="radio" id="two" name="sex"></label>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>兴趣:</td>
+                    <td>
+                        <input type="checkbox" name="hobby" value="basketball">篮球
+                        <input type="checkbox" name="hobby" value="football">足球
+                        <input type="checkbox" name="hobby" value="qiaodaoma" checked>敲代码
+                    </td>
+                </tr>
+                <tr>
+                    <td>头像:</td>
+                    <td>
+                        <input type="file" name="wenjian" id="">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="注册">
+                        <input type="reset" value="重置">
+                    </td>
+                </tr>
+            </table>
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>

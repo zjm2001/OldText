@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(/a/.test('a'))
+        // * n>=0
+        console.log(/a*/.test(''))  //true
+        console.log(/a*/.test('b'))  //true
+        console.log('-------------------------------------------')
+        // +  n>=1
+        console.log(/a+/.test('a'))  //true
+        console.log(/a+/.test(''))  //false
+        console.log(/a+/.test('b'))  //false
+        console.log('-------------------------------------------')
+        // ?  0 || 1
+        console.log(/^a?$/.test('a'))  //true
+        console.log(/^a?$/.test(''))  //true
+        console.log(/^a?$/.test('aa'))  //false
+        console.log(/^a?$/.test('b'))  //false
+        console.log('-------------------------------------------')
+        // 自定义 {n} {n,} {n,m}
+        console.log(/^a{3}$/.test('aa'))  //false
+        console.log(/^a{3}$/.test('aaa'))  //true
+        console.log(/^a{3}$/.test('aaaa'))  //false
+          //n次或者是更多次
+        console.log(/^a{3,}$/.test('aaa'))  //true
+        console.log(/^a{3,}$/.test('aaaa'))  //true
+       
+    </script>
+</body>
+</html>

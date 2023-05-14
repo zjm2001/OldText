@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    td {
+        width: 150px;
+        text-align: center;
+    }
+</style>
+
+<body>
+
+    <script>
+        let price = +prompt('请输入商品价格:')
+        let num = +prompt('请输入购买数量')
+        let address = prompt('请输入收货地址')
+        let total = num * price
+        if(num<0){
+            alert('数量不能小于零')
+        }else{
+            document.write(`    <div class="box">
+        <h3>订单确认</h3>
+        <table border="1px" cellspacing="0">
+            <tr>
+                <td>商品名称</td>
+                <td>商品价格</td>
+                <td>商品数量</td>
+                <td>总价</td>
+                <td>收货地址</td>
+            </tr>
+            <tr class="one">
+                <td>小米10u</td>
+                <td>${price}元</td>
+                <td>${num}个</td>
+                <td>${total}元</td>
+                <td>${address}</td>
+            </tr>
+        </table>
+    </div>`)
+        }
+        // const list=document.querySelectorAll('.one td')
+        // // console.log(list);
+        // list[1].innerHTML=`${price}¥`
+        // list[2].innerHTML=`${num}个`
+        // list[3].innerHTML=`${total}¥`
+        // list[4].innerHTML=`${address}`
+       
+
+    </script>
+
+</body>
+
+</html>

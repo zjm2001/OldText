@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li {
+        padding: 10px;
+      
+    }
+</style>
+
+<body>
+    <ul class="uls">
+        <li>1212</li>
+        <li>萨达萨达</li>
+        <li>司法发顺丰三</li>
+        <li>第三代</li>
+    </ul>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script>
+        //为li绑定事件改变背景色
+        // const lis = document.querySelectorAll('.uls li')
+        // console.log(lis);
+        // for (let i = 0; i < lis.length; i++)
+        //     lis[i].addEventListener('click', () => {
+        //         // console.log(11);
+        //         lis[i].style.backgroundColor='pink'
+        //     })
+
+
+            // jQuery写法
+            $('li').click(function(){
+                $(this).css('backgroundColor','pink')
+                console.log(this)
+                // console.log(this)
+            })
+            console.log( $('li:first'))
+          
+    </script>
+</body>
+
+</html>

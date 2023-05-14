@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        border: 0;
+        padding: 0;
+    }
+
+    .text {
+        width: 600px;
+        height: 50px;
+        border: 1px solid rgb(0, 0, 0);
+
+    }
+
+    button {
+        height: 52px;
+        font-size: 20px;
+        line-height: 50px;
+        width: 100px;
+        border: 1px solid #000;
+    }
+</style>
+
+<body>
+    <input type="text" class="text" value="">
+    <button class="btn">确定</button>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+<script>
+    var box = [1, 2, 6, 8];
+    var box1 = [];
+    var ipt = document.querySelector('.text');
+    var btn = document.querySelector('.btn');
+    const div01=document.querySelectorAll('div')
+    // console.log(div01);
+    btn.onclick = () => {
+        var a = ipt.value;
+        for (i = 0; i < 8; i++) {
+            box1[i] = box[i]
+        }
+        // console.log(box1)
+        for (j = 1; j < 8; j++) {
+            box[j - 1] = box1[j]
+        }
+        box[7] = a;
+        console.log(box);
+       
+       console.log(box);
+        for (i = 0; i < 8; i++) {
+           div01[i].innerHTML=box[i]
+        }
+    }
+
+</script>
+
+</html>

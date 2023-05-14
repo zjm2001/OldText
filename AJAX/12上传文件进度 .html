@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.css" rel="stylesheet">
+
+<body>
+    <input type="file" name="" id="file1">
+    <button id="btn">上传</button>
+
+    <div class="progress" style="width: 800px; margin-top: 10px;">
+        <div class="progress-bar active" style="width: 0%;" id="jdt">
+            0%
+        </div>
+    </div>
+
+    <img src="" alt="" width="800" id="img">
+    <script>
+        let btn = document.querySelector('#btn')
+        //判断是否上传文件
+        btn.addEventListener('click', function () {
+            let files = document.querySelector('#file1').files
+            if (files.length <= 0) {
+                return alert('请选择上传文件')
+            }
+            //将文件上传到formdata中
+            let fd = new FormData()
+            fd.append('avatar', files[0])
+            let xhr = new XMLHttpRequest()
+            //监听文件上传进度
+            xhr.upload.onprogress = function (e) {
+                if (e.lengthComputable) { //判断是否可计算
+                    //  e.loaded 当前上传字节    e.total 总上传
+                    let bfb = Math.ceil((e.loaded / e.total) * 100)     //计算进度百分比
+                    let jdt = document.querySelector('#jdt')
+                     jdt.style.width=`${bfb}%`
+                     jdt.innerHTML=`${bfb}%`
+
+                }
+
+
+            }
+            xhr.open('POST', 'http://www.liulongbin.top:3006/api/upload/avatar')
+            xhr.send(fd)  //传入fd类型的自动转化为
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let data = JSON.parse(xhr.responseText)   //json字符串转js
+                    console.log(data);
+                    const { message, status, url } = data    //数据解构
+                    if (status === 200) {
+                        //上传成功
+                        document.querySelector('#img').src = `http://www.liulongbin.top:3006${url}`
+                    } else {
+                        alert(message)
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

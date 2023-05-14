@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script>
+
+        $('input').focus(function () {
+            $(this).val('获取焦点改变val')
+        }).blur(function () {
+            console.log($(this).val())
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+
+        let person = {
+            uname: '周家明',
+            age: '21',
+            sex: '男',
+            output: function () {
+                document.write(`${this.uname}+${this.age}+${this.sex}`)
+            },
+            cs:()=>{
+                
+                console.log(person.uname)
+            }
+
+        }
+        console.log(person.uname);
+        console.log(person['age']);
+        person.output()
+        person.cs()
+        person.uname='沙发'    //改
+        person.hb='打游戏'   //新增
+
+        console.log(person.uname);
+        console.log(person);
+      for(let k in person){
+        console.log(k) //属性名
+        console.log(person[k]) //值
+      }
+    </script>
+</body>
+
+</html>

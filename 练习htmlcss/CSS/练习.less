@@ -1,0 +1,13 @@
+// out:./js/
+@color:red; //变量
+
+.box{
+    color: pink;
+    width: (500/30rem);
+    background-color: @color;
+    .son{
+        background-color: red;
+        // width: 68 ./2px;   可以使用除法写法
+        color: @color;
+    }
+}

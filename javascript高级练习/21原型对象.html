@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(name) {
+            this.name = name;
+
+        }
+        // 只挂载一个时
+        // Star.prototype.sing=function(){
+        //     console.log('唱歌')
+        // }
+        // 挂载多个
+        Star.prototype = {
+            //必须写指向
+            constructor:Star(),
+            sing: function () {
+                console.log('唱歌')
+            },
+            dance:function(){
+                console.log('跳舞')
+            }
+        }
+        const ldh = new Star('刘德华')
+        const gfc = new Star('郭富城')
+
+        ldh.sing()
+        gfc.sing()
+    </script>
+</body>
+
+</html>

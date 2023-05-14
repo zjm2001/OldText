@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" name="" id="file1">
+    <button id="btn">上传</button>
+      <span id="lod" style="display: none;">开始上传中</span>
+    <br>
+    <img src="" alt="" id="img">
+    <script src="./lib/jquery.js"></script>
+    <script>
+        //监听发起ajax请求
+        $(document).ajaxStart(function(){
+            $('#lod').show()
+        })
+        //监听结束ajax请求
+        $(document).ajaxStop(function(){
+            $('#lod').hide()
+        })
+        $('#btn').click(function(){
+          let files= $('#file1')[0].files   //转化为dom对象使用获取文件
+          if (files.length <= 0) {
+                return alert('请选择上传文件')
+            }
+            //将文件上传到formdata中
+            let fd = new FormData()
+            fd.append('avatar', files[0])
+           //发起ajax请求
+           $.ajax({
+            type:'POST',
+            url:'http://www.liulongbin.top:3006/api/upload/avatar',
+            data:fd,
+            contentType:false ,    
+            processData:false,
+            success:function(res){
+                 console.log(res);
+                 const { message, status, url } = res    //数据解构
+                    if (status === 200) {
+                        //上传成功
+                        $('#img').attr('src',`http://www.liulongbin.top:3006${url}`)
+                    } else {
+                        alert(message)
+                    }
+            }
+           })
+        })
+      
+    </script>
+</body>
+</html>

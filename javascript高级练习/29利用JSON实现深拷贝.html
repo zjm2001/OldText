@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           const obj = {
+            uname: 'zjm',
+            age: 18,
+            hobby: ['唱', '跳'],
+            ss: {
+                nn: 1,
+                tt: "大萨达"
+            }
+
+        }
+   const o= JSON.parse(JSON.stringify(obj))
+   console.log(o)
+        o.age = 25
+        o.hobby[0] = 'llll'
+        o.ss.nn='对对对'  
+    </script>
+</body>
+</html>

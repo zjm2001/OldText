@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        width: 1300px;
+        height: 500px;
+        margin: 0 auto;
+        overflow: hidden;
+        background-image: url(./image/bg.jpg);
+    }
+
+    .box::after,
+    .box::before {
+        float: left;
+        content: "";
+        width: 50%;
+        height: 500px;
+        transition: all 1s;
+        background-image: url(./image/fm.jpg);
+    }
+    .box::after{
+        background-position: right 0;
+        transform: translate(650px);
+    }
+    .box::before{
+        transform: translate(-650px);
+    }
+   .box:hover.box::after{
+    transform: translate(0);
+   }
+   .box:hover.box::before{
+    transform: translate(0);
+   }
+</style>
+
+<body>
+    <div class="box">
+
+    </div>
+</body>
+<script>
+
+
+
+</script>
+
+</html>

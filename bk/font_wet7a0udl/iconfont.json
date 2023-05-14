@@ -1,0 +1,100 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "34171350",
+      "name": "丸子",
+      "font_class": "wanzi",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "34171354",
+      "name": "草莓",
+      "font_class": "tubiaozhizuomoban-copy-copy",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "34175627",
+      "name": "西瓜",
+      "font_class": "tubiaozhizuomoban",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "34175674",
+      "name": "巧克力蛋糕",
+      "font_class": "tubiaozhizuomoban1",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "34211418",
+      "name": "果汁",
+      "font_class": "guozhi",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "34233294",
+      "name": "红酒",
+      "font_class": "a-1",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "34256089",
+      "name": "甜甜圈",
+      "font_class": "tubiaozhizuomoban2",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "34256163",
+      "name": "火锅",
+      "font_class": "tubiaozhizuomoban3",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "34284044",
+      "name": "薯片",
+      "font_class": "shupian",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "34285365",
+      "name": "葡萄",
+      "font_class": "putao",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "34285390",
+      "name": "火龙果",
+      "font_class": "huolongguo",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "34285444",
+      "name": "汉堡",
+      "font_class": "hanbao",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "34308601",
+      "name": "冰棍3",
+      "font_class": "binggun3",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    }
+  ]
+}

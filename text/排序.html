@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //冒泡
+        ; (function () {
+            // 定义待排序数组
+            const arr = [26, 37, 8, 63, 12, 59, 12, 48];
+            // 冒泡排序函数
+            function bubbleSort(arr) {
+                // 获取待排序数组的长度
+                const len = arr.length;
+                // 外层循环表示需要排序的轮数，从 n-1 开始递减到 1
+                for (let i = len - 1; i > 0; i--) {
+                    // 内层循环实现当前轮次相邻元素比较及交换
+                    for (let j = 0; j < i; j++) {
+                        if (arr[j] > arr[j + 1]) {
+                            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                        }
+                    }
+                }
+                return arr;
+            }
+            // 执行冒泡排序并输出结果
+            console.log(bubbleSort(arr));  // 输出结果：[ 8, 12, 12, 26, 37, 48, 59, 63 ]
+
+
+
+            //快速排序
+            function quickSort(array) {
+                if (array.length <= 1) { // 如果共只有一个元素或没有元素，那么直接返回数组本身
+                    return array;
+                }
+
+                const pivot = array[array.length - 1]; // 将最后一个元素作为枢轴
+                const leftArr = [];
+                const rightArr = [];
+
+                for (let i = 0; i < array.length - 1; i++) {
+                    if (array[i] < pivot) { // 小于枢轴的元素放入左侧数组
+                        leftArr.push(array[i]);
+                    } else { // 大于枢轴的元素放入右侧数组
+                        rightArr.push(array[i]);
+                    }
+                }
+
+                return [...quickSort(leftArr), pivot, ...quickSort(rightArr)]; // 递归调用函数，并在数组前后加上左右两个数组的排序结果
+            }
+            console.log(quickSort(arr)); //输出:[ 8, 12, 12, 26, 37, 48, 59, 63 ]
+
+
+            //选择排序
+            // 定义选择排序函数
+            function selectionSort(array) {
+                // 遍历整个数组
+                for (let i = 0; i < array.length - 1; i++) {
+                    // 分别记录当前轮次最小值的下标和最小值
+                    let minIndex = i;
+                    let minValue = array[i];
+
+                    // 从未排序部分找到剩余元素中的最小值，更新minValue和minIndex
+                    for (let j = i + 1; j < array.length; j++) {
+                        if (array[j] < minValue) {
+                            minValue = array[j];
+                            minIndex = j;
+                        }
+                    }
+
+                    // 将该轮次的最小值和i位置上的数互换
+                    [array[i], array[minIndex]] = [array[minIndex], array[i]];
+                }
+
+                // 返回排序后的数组
+            }
+            console.log(selectionSort(arr));
+    
+
+              //树形选择排序
+        })()
+
+    </script>
+</body>
+
+</html>

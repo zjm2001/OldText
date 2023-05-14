@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bg {
+        background-color: pink;
+    }
+</style>
+
+<body>
+    <button class="bg">111</button><button>2222</button><button>333</button><button>4444</button><button>55555</button>
+    <script>
+
+        let btns = document.querySelectorAll('button')
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                // for (let j = 0; j < btns.length; j++) {
+                //     btns[j].className = ' '
+                // }
+                document.querySelector('.bg').classList.remove('bg')
+                this.classList.add('bg')
+            })
+        }
+    </script>
+</body>
+
+</html>

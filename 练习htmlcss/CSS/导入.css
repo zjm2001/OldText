@@ -1,0 +1,9 @@
+.box {
+  color: pink;
+  width: 16.66666667rem;
+  background-color: red;
+}
+.box .son {
+  background-color: red;
+  color: red;
+}

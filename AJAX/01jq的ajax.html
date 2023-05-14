@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../jQuery代码/js/jquery-3.5.1.min.js"></script>
+    <button id="btnGET">发起不带参数的GET请求</button>
+    <button id="btnGET1">发起带参数的GET请求</button>
+    <h1>撒大大萨达的sad</h1>
+  <script>
+    $(function () {
+      $('#btnGET').on('click', function () {
+        $.get('http://www.liulongbin.top:3006/api/getbooks', function (res) {
+          console.log(res)
+        })
+      })
+      // $('#btnGET').on('click', function () {
+      //   $.get('http://127.0.0.1/api/list', function (res) {
+      //     console.log(res)
+      //   })
+      // })
+    })
+    $(function(){
+        $('#btnGET1').on('click',function(){
+            $.get('http://www.liulongbin.top:3006/api/getbooks',{id:2},function(res){
+                console.log(res);
+            })
+        })
+        // $('#btnGET1').on('click',function(){
+        //     $.post('http://127.0.0.1/api/list',{uname:'zjm',age:20},function(res){
+        //         console.log(res);
+        //     })
+        // })
+    })
+
+    // 修改一下文件测试git清空
+  </script>
+    </script>
+</body>
+</html>

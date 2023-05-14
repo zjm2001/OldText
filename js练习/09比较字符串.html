@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+    .box1,
+    .box2{
+        width: 200px;
+        height: 200px;
+        border: 2px solid red;
+        background-color: blue;
+        margin-bottom: 10px;
+    }
+    .box1{
+        box-sizing: border-box;
+    }
+    .box{
+        background-color: blue;
+        padding: 10px 10px;
+    }
+ </style>
+<body>
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box"></div>
+    <script>
+        //特殊情况
+        // 更具ASCII表比较   如果是第一位一样一样向下
+        console.log('大萨达' > '撒大大');  //false
+        //nan不能和任何比较
+        console.log(1 === NaN);  //false
+        console.log(NaN === NaN);  //false 
+        // 尽量不要用小数比较
+        console.log(0.1+0.2 === 0.3);  //false 
+           console.log(false && 20); //false
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li class="one"></li>
+            <li id="two"> </li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+    <script>
+        // const text = "a1b1c54654561";
+        // const chars = text.split('1');
+        console.log(chars);
+        let lis = document.querySelectorAll('ul li')   ///获取多个节点
+        let box = document.querySelector('div')
+        let one = document.querySelector('.one')
+        let two = document.querySelector('#two')
+        let liss = document.getElementById('two')
+        console.log(lis, box, one, two, liss);
+        console.log(one.parentNode);
+        // let i =function (){
+        //     return    '萨达'
+        //   }
+        //   console.log(i);
+    </script>
+</body>
+
+</html>

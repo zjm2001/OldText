@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p {
+
+        width: 502px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    span {
+        display: inline-block;
+        width: 200px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border: 1px solid pink;
+    }
+</style>
+
+<body>
+    <p>
+        被抽中的名称:<span></span>
+    </p>
+
+    <button>抽取</button>
+    <script>
+
+        let arr = ['张珊0', '撒大大', '撒大大对对对', '撒大大222', '嘎嘎嘎我', '灌灌灌灌灌']
+        let name = document.querySelector('span')
+        let btn = document.querySelector('button')
+        function getRan(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        btn.onclick = function () {
+            let ran = getRan(0, arr.length - 1)
+            if (arr.length !== 0) {
+                name.innerText = arr[ran]
+                arr.splice(ran, 1)
+            } else {
+                alert('都点完了重新开始抽')
+                name.innerText = ' '
+                arr = ['张珊0', '撒大大', '撒大大对对对', '撒大大222', '嘎嘎嘎我', '灌灌灌灌灌']
+            }
+        }
+
+    </script>
+</body>
+
+</html>

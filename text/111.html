@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul li:nth-child(1) a {
+        background-color: blue;
+    }
+
+    ul li div::before {
+        content: "55555ddddd";
+    }
+</style>
+
+<body>
+    <ul>
+        <div>555566464646</div>
+        <li><a href="">2222</a></li>
+        <li><a href="">333333</a></li>
+        <li><a href="">44444</a></li>
+        <li><a href="">555555</a></li>
+        <li><a href="">66666</a></li>
+        <li><a href="">777777</a></li>
+        <li><a href="">88888</a></li>
+        <li><a href="">9999999</a></li>
+
+
+    </ul>
+
+</body>
+<script>
+
+
+    var a = [1, 2, 3, 4, 5]
+    var b = [];
+    for (i = 0; i < 5; i++) {
+        b[i] = a[i];
+    }
+    console.log(b);
+    for (j = 1; j < 5; j++) {
+        a[j - 1] = b[j];
+    }
+    a[4] = 0;
+    console.log(a);
+</script>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link crossorigin="anonymous" integrity="sha384-9GKi7Mg3e8wxMnh60bnNnc9kuwGfarF0StF1UbfPt4F5GMVfxBgfh8/pW4iHavxG"
+    href="https://lib.baomitu.com/twitter-bootstrap/3.4.1/css/bootstrap.css" rel="stylesheet">
+<style>
+    .box {
+        width: 600px;
+        height: 400px;
+        margin: 0 auto;
+        padding: 20px 10px;
+    }
+
+    h3 {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <h3>注册新用户</h3>
+        <form action="add" method="post">
+            <div class="input-group">
+                <span class="input-group-addon" >用户名</span>
+                <input type="text" class="form-control" id="name" name="name" aria-describedby="basic-addon3">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"> 密码</span>
+                <input type="text" class="form-control" id="password" name="password" aria-describedby="basic-addon3">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" > 邮箱</span>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="basic-addon3">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" > 生日</span>
+                <input type="date" placeholder="yyyy-MM-dd" class="form-control" id="birthday" name="birthday"
+                    aria-describedby="basic-addon3">
+            </div>
+            <input type="submit" class="btn btn-default" value="注册">
+            <input type="reset"  class="btn btn-default"> 
+            <a>萨达萨达撒</a>
+        </form>
+    </div>
+
+</body>
+
+</html>

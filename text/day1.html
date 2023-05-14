@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度一下,你就知道</title>
+    <link rel="shortcut icon" href="image/logo1.png" type="image/x-icon">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    ul li {
+        list-style: none;
+        float: left;
+        font-size: 14px;
+    }
+
+    .nav {
+        height: 60px;
+        min-width: 1900px;
+        line-height: 60px;
+        padding: 0 20px;
+    }
+
+    .nav .left {
+        float: left;
+    }
+
+    .nav .right {
+        float: right;
+    }
+
+    .nav ul li a {
+        display: block;
+        color: black;
+        padding: 0 15px;
+        font-weight: 500;
+
+    }
+
+    .nav ul li a img {
+        /* 图片文字对齐 */
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+
+    /* 中间盒子布局 */
+    .box {
+        width: 1100px;
+        /* background-color: aquamarine; */
+        /* height: 50px; */
+        margin: auto;
+    }
+
+    .box .logo {
+        margin-top: 100px;
+        margin-bottom: 35px;
+    }
+
+    .box .logo img {
+        display: block;
+        margin: auto;
+    }
+
+    .search {
+        margin: auto;
+        height: 100px;
+        width: 700px;
+    }
+
+    .search input {
+        /* border-color:transparent; */
+        display: block;
+        float: left;
+        width: 520px;
+        padding: 2px 10px;
+        height: 38px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border: 2px solid #4e6ef2;
+        outline: none;
+    }
+
+    .search span {
+        display: block;
+        float: left;
+        text-align: center;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        height: 46px;
+        line-height: 46px;
+        width: 100px;
+        background-color: #4e6ef2;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+</style>
+
+<body>
+    <div class="nav">
+        <div class="left">
+            <ul>
+                <li><a href="#">新闻</a></li>
+                <li><a href="#">hao123</a></li>
+                <li><a href="#">地图</a></li>
+                <li><a href="#">贴吧</a></li>
+                <li><a href="#">视频</a></li>
+                <li><a href="#">图片</a></li>
+                <li><a href="#">网盘</a></li>
+                <li><a href="#">更多</a></li>
+
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="#">赣州天气<img src="image/天气.jpg" alt="" width="90px"></a></li>
+                <li><a href="#">设置</a></li>
+                <li><a href="#"><img src="image/touxing.png" alt="" width="90px"></a></li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="box">
+        <!-- 图片大logo区域 -->
+        <div class="logo">
+            <img src="image/logo.png" alt="" width="350px">
+        </div>
+    </div>
+    <!-- 搜索位置 -->
+    <div class="box">
+        <div class="search">
+            <input type="text">
+            <span>百度一下</span>
+        </div>
+
+    </div>
+    <!-- 主内容位置 -->
+    <div class="box">
+        <div class="main">
+            <div class="lift">左</div>
+            <div class="right">右</div>
+        </div>
+    </div>
+    <!-- 底部标签信息位置 -->
+    <div class="foot"></div>
+</body>
+
+</html>

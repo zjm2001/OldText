@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt(`输第一个数`)
+        let count = prompt(`输入需要操作 +  -  * /`)
+        switch (count) {
+            case '+':
+                let num1 = +prompt(`输第二个数`)
+                document.write(`${num}+${num1}=${num + num1}`)
+                break
+            case '-':
+                let num2 = +prompt(`输第二个数`)
+                document.write(`${num}-${num2}=${num - num2}`)
+                break
+            case '*':
+                let num3 = +prompt(`输第二个数`)
+                document.write(`${num}×${num3}=${num * num3}`)
+                break
+            case '/':
+                let num4 = +prompt(`输第二个数`)
+                if (num4 === 0) { alert(`除数不能为零`) }
+                else { document.write(`${num}÷${num4}=${num / num4}`) }
+                break
+            default: alert('数据错误')
+        }
+          
+    </script>
+</body>
+
+</html>

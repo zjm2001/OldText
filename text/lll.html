@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <dialog >这是模态框</dialog>
+    <dialog >这是打开模态框</dialog>
+    <button>一</button>
+    <button>二</button>
+
+
+</body>
+<script >
+var ll=document.querySelectorAll('dialog');
+var btn=document.querySelectorAll('button');
+ console.log(ll);
+ console.log(btn);
+ for(i=0;i<btn.length;i++){
+  btn[0].onclick=function () {
+    ll[0].open="open";
+  }
+  btn[1].onclick=function () {
+    ll[1].open="open";
+  }
+ }
+
+</script>
+</html>

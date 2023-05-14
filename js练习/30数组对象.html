@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .box {
+        margin: 0px auto;
+        width: 500px;
+    }
+
+    table {
+        border: 1px solid #bbb;
+        text-align: center;
+
+    }
+
+    td {
+
+        width: 130px;
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #bbb;
+    }
+
+    .top {
+        background-color: #ccc;
+        font-weight: 700;
+    }
+</style>
+
+<body>
+   
+        
+
+    <script>
+        let arr = [
+            { name: 'zjm', age: 18, sex: '男', home: '江西省' },
+            { name: '大萨达', age: 28, sex: '男', home: '江西省' },
+            { name: 'z撒大大jm', age: 18, sex: '男', home: '江西省' },
+            { name: 'zj快快快m', age: 158, sex: '男', home: '江西省' },
+            { name: 'z大多数jm', age: 18, sex: '男', home: '江西省' },
+            { name: 'z大多数jm', age: 18, sex: '男', home: '江西省' },
+            { name: 'z大多数jm', age: 18, sex: '男', home: '江西省' },
+            { name: 'z大多数jm', age: 18, sex: '男', home: '江西省' }
+        ]
+
+        //打印头部和尾部
+        document.write(`
+        
+        <h3 style="text-align: center; margin-top:50px">学生信息表</h3>
+
+<div class="box">
+
+ <table cellspacing="0" border="1" class="">
+     <tr class="top">
+         <td>序号</td>
+         <td>姓名</td>
+         <td>性别</td>
+         <td>年龄</td>
+         <td>家乡</td>
+     </tr>
+        
+        `)
+        for (let i = 0; i < arr.length; i++) {
+            // console.log(arr[i]);
+          
+                document.write(`
+             <tr>
+                <td>${i+1}</td>
+                <td>${arr[i].name}</td>
+                <td>${arr[i].sex}</td>
+                <td>${arr[i].age}</td>
+                <td>${arr[i].home}</td>
+            </tr> 
+                `)
+
+        
+
+        }
+
+         //打印尾部
+ document.write(`
+</table>
+    </div>
+
+ `)
+    </script>
+</body>
+
+</html>

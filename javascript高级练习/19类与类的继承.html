@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       class Per{
+        constructor(name,age){
+            this.name=name
+            this.age =age
+        }
+        sayHi(){
+            console.log(`我叫${this.name}今年${this.age}岁`)
+        }
+       }
+  
+       class Student extends Per{
+        constructor(name,age,score){
+            super(name,age)
+            this.score=score
+        }
+        sayHi(){
+            console.log(`我是学生`)
+            console.log(this.name)
+        }
+       }
+
+       const pp=new Per('ZJM',55)
+       pp.sayHi()
+       console.log((pp))
+       const ss=new Student('zhangsan',55,666 )
+       console.log(ss)
+       ss.sayHi()
+    </script>
+</body>
+
+</html>

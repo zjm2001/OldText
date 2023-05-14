@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>notebook</title>
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <section class="todoapp">
+    <header class="header">
+      <h1>记事本</h1>
+      <input id="addTodo" class="new-todo" placeholder="请输入内容" autofocus />
+    </header>
+    <section class="main">
+      <ul class="todo-list" id="todoList"></ul>
+    </section>
+    <footer class="footer">
+      <span class="todo-count">合计:<strong>0</strong> </span>
+    </footer>
+  </section>
+
+  <script src="./js/jquery-3.5.1.js"></script>
+  <script>
+    //新增功能
+    // 按下回车键新建一个标签新增
+    ; (function () {
+      $('#addTodo').keyup(function (e) {
+        if (e.keyCode === 13) {
+          let value = $(this).val()
+          // console.log('按下回车');
+          if ($(this).val().trim().length > 0) {
+            $(this).val('')
+
+            $('#todoList').append(`<li style="display:none">
+      <div class="view">
+        <label>${value}</label>
+        <button class="destroy"></button>
+      </div>
+    </li>`)
+            $('#todoList li').last().slideDown(function(){
+              $('.todo-count strong').text($('#todoList li').length)
+              
+            })
+          } else {
+            $(this).val('')
+            alert('输入不能为空')
+          }
+
+        }
+      })
+      //删除
+      $('#todoList').on('click','.destroy',function(){
+        // 
+        $(this).parent().parent().fadeOut(function(){
+        $(this).remove()
+        $('.todo-count strong').text($('#todoList li').length)
+        })
+      })
+
+    })()
+  </script>
+</body>
+
+</html>

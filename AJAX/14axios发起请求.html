@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">发送get请求</button><br>
+    <button id="btn2">发送post请求</button><br>
+    <button id="btn3">发送axios请求</button><br>
+    <script crossorigin="anonymous" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" src="https://lib.baomitu.com/axios/0.27.2/axios.min.js"></script>
+    <script>
+        document.querySelector('#btn1').onclick=function(){
+            console.log(111);
+            axios.get('http://www.liulongbin.top:3006/api/get',{params:{name:'zs',age:22}}).then(function(res){
+                               console.log(res.data);
+        })
+        }
+        document.querySelector('#btn2').onclick=function(){
+            axios.post('http://www.liulongbin.top:3006/api/post',{params:{location:'江西',address:'九江'}}).then(function(res){
+                               console.log(res.data);
+        })
+        }
+        document.querySelector('#btn3').onclick=function(){
+           axios({
+            method:'get',
+            url:'http://www.liulongbin.top:3006/api/get',
+            params:{
+                name:'周家明',
+                age:20
+            }
+           }).then(function(res){
+            console.log(res.data)
+           })
+        
+        }
+        
+    </script>
+</body>
+</html>

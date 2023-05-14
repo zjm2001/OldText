@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./fullpage/jquery.fullpage.css">
+<style>
+    .section p {
+        position: relative;
+        top: 900px;
+        text-align: center;
+        padding: 30px 0;
+        font-size: 60px;
+        font-weight: 900;
+        transition: all .5s;
+        
+    }
+    .cons{
+        top: 0!important ; 
+    }
+
+    .one {
+       
+        background-color: #0da5d6;
+    }
+
+    .two {
+        
+       
+        background-color: #2ab561;
+    }
+
+    .three {
+     
+        background-color: #16ba9d;
+    }
+</style>
+
+<body>
+
+    <div id="fullpage">
+        <div class="section one">
+            <p class="">精彩动画</p>
+            <p class="">精彩撒大大的萨达萨达萨达动画</p>
+        </div>
+        <div class="section two">
+            <p class="">精彩动画</p>
+            <p class="">精彩撒大大的萨达萨达萨达动画</p>
+        </div>
+        <div class="section three">
+            <p class="">精彩动画</p>
+            <p class="">精彩撒大大的萨达萨达萨达动画</p>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./fullpage/jquery.fullpage.min.js"></script>
+    <script>
+        $('#fullpage').fullpage({
+            anchors: ['one', 'two', 'three'],  //锚点地址栏
+            afterLoad(con, index) {
+               $('.section p').removeClass('cons')
+               setTimeout(function(){
+                $('.section').eq(index-1).children().children().addClass('cons')
+                console.log($('.section').eq(index-1).children().children());
+             
+               },100)
+            }
+
+        })
+    </script>
+</body>
+
+</html>

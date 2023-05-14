@@ -1,0 +1,378 @@
+/* 公共样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+}
+
+ul, h1, h3, h4, p, dl, dd, h2 {
+    padding: 0;
+    margin: 0;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+/* 居中盒子版心 */
+.box {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+/* 头部部分 */
+.top {
+    height: 53px;
+    width: 100%;
+    background-color: #333333;
+}
+
+.top ul {
+    float: right;
+}
+
+.top ul li {
+    float: left;
+    width: 88px;
+    height: 53px;
+    line-height: 53px;
+}
+
+.top ul li a {
+    display: inline-block;
+    line-height: 1;
+    color: #dcdcdc;
+    padding: 0 15px;
+    border-right: 2px solid #666;
+}
+
+.top ul li:last-child a {
+    border: 0;
+}
+
+.top ul li a:hover {
+    color: #5eb69c;
+}
+
+.top .box .mob {
+    display: inline-block;
+    width: 11px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-image: url(../images/sprites.png);
+    background-position: -160px -70px;
+    background-size: 400px 400px;
+    /* 图片文字居中 */
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* 头部 */
+.header {
+    margin: 30px auto;
+    height: 70px;
+    /* background-color: aqua; */
+}
+
+.logo {
+    float: left;
+    width: 207px;
+    height: 70px;
+    /* background-color: aquamarine; */
+}
+
+.logo h1 {
+    width: 207px;
+    height: 70px;
+
+}
+
+.logo h1 a {
+    display: block;
+    width: 207px;
+    height: 70px;
+    background-image: url(../images/logo.png);
+    background-size: contain;
+    /* background-size: 207px 70px; */
+    background-repeat: no-repeat;
+    font-size: 0;
+}
+
+.nav {
+    float: left;
+    margin-left: 40px;
+    height: 70px;
+    /* background-color: brown; */
+}
+
+.nav ul li {
+    float: left;
+    font-size: 16px;
+    line-height: 70px;
+    color: #333;
+    margin-right: 48px;
+}
+
+.nav ul li a:hover {
+    color: #5eb69c;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #5eb69c;
+}
+
+.search {
+    position: relative;
+    float: left;
+    margin-left: 34px;
+    margin-top: 24px;
+    width: 172px;
+    height: 30px;
+    border-bottom: 2px solid #e7e7e7;
+    /* background-color: rgb(71, 19, 19); */
+}
+
+.search input {
+
+    padding-left: 30px;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.search input::placeholder {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.search span {
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    /* display: inline-block; */
+    width: 18px;
+    height: 18px;
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+    background-image: url(../images/sprites.png);
+    background-position: -79px -69px;
+}
+
+.car {
+    position: relative;
+    float: left;
+    margin-top: 28px;
+    margin-left: 15px;
+    height: 23px;
+    width: 23px;
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+    /* background-color: skyblue; */
+    background-image: url(../images/sprites.png);
+    background-position: -119px -69px;
+}
+
+.car span {
+    position: absolute;
+    right: -13px;
+    top: -6px;
+    width: 22px;
+    height: 15px;
+    background-color: #e26237;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    line-height: 15px;
+}
+
+/* 底部版权区域 */
+.footer {
+    width: 100%;
+    height: 342px;
+    margin-top: 20px;
+    background-color: #333;
+}
+
+.footer .box {
+    width: 1393px;
+}
+
+.footer .top {
+    padding-top: 59px;
+
+    height: 175px;
+    border-bottom: 3px solid #434343;
+}
+
+.footer .top ul {
+    float: left;
+    padding-left: 135px;
+}
+
+.footer .top li {
+    position: relative;
+    float: left;
+    margin-right: 275px;
+    width: 195px;
+    height: 58px;
+    line-height: 58px;
+}
+
+.footer .top li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 58px;
+    height: 58px;
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+    background-image: url(../images/sprites.png);
+    vertical-align: middle;
+}
+
+.footer .top li:nth-child(3) {
+    margin-right: 0;
+}
+
+.footer .top li span {
+    margin-left: 77px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.footer .top li:nth-child(2)::before {
+    background-position: -130px 0;
+}
+
+.footer .top li:nth-child(3)::before {
+    background-position: -64px 0;
+}
+
+.footer .bottom {
+    padding-top: 40px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+
+.footer .bottom p {
+    margin-bottom: 20px;
+}
+
+.footer .bottom a {
+    font-size: 14px;
+    color: #999;
+}
+
+/* 关于我们 */
+.content {
+    /* margin-top: 20px; */
+    border-top: 1px solid #e4e4e4;
+}
+
+.content .neirong {
+    padding: 60px 0 40px 25px;
+}
+
+.content dl {
+    height: 190px;
+    text-align: center;
+    padding: 0 72px;
+    border-right: 1px solid #f2f2f2;
+    color: #999;
+    float: left;
+}
+
+.content dl:nth-child(1) {
+    padding-left: 0;
+}
+
+.content dl:last-child {
+    padding-right: 0;
+    border: 0;
+}
+
+.content dt {
+    line-height: 1;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.content dl dd {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    margin-top: 20px;
+    border: 1px solid #ededed;
+}
+
+.content .one dd::before,
+.content .two dd::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 30px;
+    margin: 0 auto 8px;
+    margin-top: 12px;
+    background-image: url(../images/sprites.png);
+    background-size: 400px 400px;
+}
+
+.content dl .kefu::before {
+    background-position: -245px -70px;
+}
+
+.content dl .fankui::before {
+    background-position: -345px -70px;
+}
+
+.content dl .gongzhonghao::before {
+    background-position: -247px -15px;
+}
+
+.content dl .weibo::before {
+    background-position: -347px -15px;
+}
+
+.content .reweima img {
+    height: 75px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+.content dl .xiazai {
+    border: 0;
+    width: 90px;
+}
+
+.content dl .xiazai a {
+    display: block;
+    line-height: 1;
+    font-size: 14px;
+    padding: 8px 17px;
+    margin-top: 5px;
+    color: #fff;
+    border-radius: 2px;
+    background-color: #5eb69c;
+}
+
+.content dl .rexian {
+    width: 160px;
+    border: 0;
+    padding-top: 20px;
+    font-size: 22px;
+    color: #666;
+}
+.content dl .rexian small{
+    display: block;
+    font-size: 14px;
+}

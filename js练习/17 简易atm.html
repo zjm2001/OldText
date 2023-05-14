@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let sum =200
+        while(true){
+         let str =prompt(`
+            请你选择操作:
+            1.存钱
+            2.取钱
+            3.查询余额
+            4.退出
+         `)
+         if(str ==='4'){
+            break
+         }
+
+         switch(str){
+            case '1':
+                let cun = +prompt('你要存多少钱')
+                sum= sum+cun
+                break
+            case '2':
+                let cun1 = +prompt('你要取多少钱')
+                sum= sum - cun1
+                break
+            case '3':
+               alert(`余额为${sum}`)
+                break
+         }
+        }
+    </script>
+</body>
+</html>

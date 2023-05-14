@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        margin-top: 200px;
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+    }
+</style>
+<body>
+    <button>淡出</button>
+    <button class="one">淡入</button>
+    <button>切换</button>
+    <div class="box">
+
+    </div>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script>
+        $('button:first').click(function(){
+            $('.box').fadeOut(1000)
+        })
+        $('.one').click(function(){
+            $('.box').fadeIn(1000)
+        })
+        $('button:last').click(function(){
+            $('.box').fadeToggle(1000)
+        })
+    </script>
+</body>
+</html>

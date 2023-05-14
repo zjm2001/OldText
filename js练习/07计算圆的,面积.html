@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        background-color: pink;
+       
+        border-radius: 50%;
+    }
+</style>
+<body>
+    
+    <div class="box">
+        
+    </div>
+    <script>
+        const box = document.querySelector('.box')
+        // console.log(box)
+        let  r = prompt('请输入圆的半径')
+        document.write(`<p>半径为${r}的圆扩大10倍大小如下单位px</p>`)
+        box.style.width=`${r*10}px`
+        box.style.height=`${r*10}px`
+        let  s = r*r*Math.PI
+        document.write(`<p>半径为${r}的圆面积为${s}</p>`)
+         
+    </script>
+</body>
+</html>

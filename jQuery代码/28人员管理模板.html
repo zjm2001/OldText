@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>人员管理</title>
+  <link rel="stylesheet" href="./datepicker/datepicker.css">
+
+  <!-- 自己的样式 -->
+  <link rel="stylesheet" href="./css/rygl.css" />
+</head>
+
+<body>
+  <h1>人员管理</h1>
+  <div class="container">
+    <!-- 新增按钮 -->
+    <button class="btn add">新增</button>
+    <!-- 表格 -->
+    <table>
+      <thead>
+        <tr>
+          <th width="150">姓名</th>
+          <th width="150">手机</th>
+          <th>生日</th>
+          <th width="300">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="display: none;">
+          <td class="td-name">小红</td>
+          <td class="td-mobile">18888881111</td>
+          <td class="td-birth">1990年02月08日</td>
+          <td>
+            <button class="btn edit">编辑</button>
+            <button class="btn del">删除</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-name">小红</td>
+          <td class="td-mobile">18888881111</td>
+          <td class="td-birth">1990年02月08日</td>
+          <td>
+            <button class="btn edit">编辑</button>
+            <button class="btn del">删除</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 弹出框 -->
+  <div class="dialog-wrap">
+    <div class="form-container">
+      <div class="title">
+        <h3></h3>
+        <i class="close">×</i>
+      </div>
+      <form class="form">
+        <label class="required">
+          姓名:
+          <input data-required data-describedby="nickname-error" data-description="nickname" type="text"
+            class="nickname" />
+          <span class="error" id="nickname-error"></span>
+        </label>
+        <label class="required">
+          手机:
+          <input data-required
+            data-pattern="^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$"
+            data-describedby="mobile-error" data-description="mobile" type="text" class="mobile" />
+          <span class="error" id="mobile-error"></span>
+        </label>
+        <label class="required">
+          生日:
+          <input data-required data-describedby="birthday-error" data-description="birthday" type="text"
+            class="birthday" />
+          <span class="error" id="birthday-error"></span>
+        </label>
+
+        <div class="control">
+          <a class="btn cancel">取消</a>
+          <button class="btn">提交</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- 导入jQuery -->
+  <script src="./js/jquery-3.5.1.js"></script>
+  <!-- 导入日期选择器插件 -->
+  <script src="./datepicker/datepicker.js"></script>
+  <!-- 导入日期选择器的语言包 -->
+  <script src="./datepicker/i18n/datepicker.zh-CN.js"></script>
+  <!-- 导入表单校验插件 -->
+  <script src="./jquery-validate/jquery-validate.js"></script>
+  <script>
+    ; (function () {
+      let $edittr = undefined
+      function cel() {
+        $('.dialog-wrap').fadeOut(function () {
+          //清空表单
+          $('form')[0].reset()
+          //清空提示信息
+          $('form span').text('')
+        })
+
+      }
+      //设置时间插件
+      $('.birthday').datepicker({
+        language: 'zh-CN',  //设置语言
+        autoHide: true   //选择日期后自动关闭
+      })
+      //点击新增
+      $('.add').click(function () {
+       
+        $('.dialog-wrap').fadeIn(function () {
+          $('.title h3').text('新增')
+        })
+      })
+      //表单验证
+      $('form').validate({
+        sendForm: false,  //阻止默认行为
+        description: {
+          //写验证错信息
+          nickname: {  // 昵称属性
+            required: '昵称不能为空', //空格式的报错
+          },
+          mobile: {
+            required: '手机号不能为空', //空格式的报错
+            pattern: '手机格式错误'     //正则类报错
+          },
+          birthday: {
+            required: '生日不能为空', //空格式的报错
+          }
+
+        },
+        valid() {
+          console.log('验证成功函数');
+          if ($edittr === undefined) {
+            let $tr = $('tbody tr').first().clone()
+            // 取出输入的值
+            let name = $('.nickname').val()
+            let mo = $('.mobile').val()
+            let birthday = $('.birthday').val()
+            $tr.find('.td-name').text(name)
+            $tr.find('.td-mobile').text(mo)
+            $tr.find('.td-birth').text(birthday)
+            $('tbody').append($tr)
+            //清空
+            $tr.show()
+            cel()
+          }else{
+            // console.log('编辑');
+            let name = $('.nickname').val()
+            let mo = $('.mobile').val()
+            let birthday = $('.birthday').val()
+            $edittr.find('.td-name').text(name)
+            $edittr.find('.td-mobile').text(mo)
+            $edittr.find('.td-birth').text(birthday)
+            cel()
+            $edittr = undefined //编辑结束需要清空掉不然影响下一次添加
+          }
+
+        },
+        invalid() {
+          console.log('验证失败函数');
+        }
+      }
+
+      )
+      //点击取消
+      $('.cancel').click(function () {
+        cel()
+      })
+      //点击插号
+      $('.close').click(function () {
+        cel()
+      })
+      //删除按钮使用事件委托
+      $('tbody').on('click', '.del', function () {
+        console.log(this);
+        let $tr = $(this).parent().parent()
+        $tr.fadeOut(function () {
+          $tr.remove()
+        })
+      })
+      //编辑按钮
+      $('tbody').on('click', '.edit', function () {
+        $('.dialog-wrap').fadeIn(function () {
+          $('.title h3').text('编辑')
+        })
+        let $tr = $(this).parent().parent()
+        let name = $tr.find('.td-name').text()
+        let mo = $tr.find('.td-mobile').text()
+        let birthday = $tr.find('.td-birth').text()
+        // console.log(name + mo + birthday);
+        $('.nickname').val(name)
+        $('.mobile').val(mo)
+        $('.birthday').val(birthday)
+        $edittr = $tr
+      })
+
+    })()
+  </script>
+</body>
+
+</html>

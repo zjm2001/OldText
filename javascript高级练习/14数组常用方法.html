@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const arr =['red','pink','green']
+        // const re =arr.find(item=>item ==='red')
+        // console.log(re);
+        const arr = [
+            {
+                name: '小米',
+                pr: 1999
+            },
+            {
+                name: '华为',
+                pr: 5666
+            },
+            {
+                name: 'oppo',
+                pr: 5666
+            },
+            {
+                name: 'vivo',
+                pr: 5666
+            },
+        ]
+        const re = arr.find(item => {
+            // console.log(item)
+            return item.name === '小米'
+            // [{name}]=item
+            // console.log(name);
+        })
+        console.log(re);
+
+        const arr1 = [1, 5, 8, 3, 6, 9, 4, 2, 55, 88]
+        const bb = arr1.every((item) => item < 100)
+        console.log(bb)
+        const aa = arr1.some(item => item > 80)
+        console.log(aa)
+    </script>
+
+</body>
+
+</html>

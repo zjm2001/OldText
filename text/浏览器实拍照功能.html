@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cont">
+        <video src="" id="video" autoplay style="background-color: #000;"></video>
+        <canvas style="display: none;" id="canvas"></canvas>
+        <img src="" alt="" id="img">
+    </div>
+    <button id="btn" >拍照</button>
+</body>
+<script>
+
+     const cvs=document.querySelector('#canvas')
+     const video=document.querySelector('#video')
+     cvs.width=cvs.height=video.width=video.height=400
+     const{ width,height}=cvs
+     const ctx=cvs.getContext('2d')
+     console.log(cvs);
+     //调用相机参数
+     const x={
+     video:{
+        width,
+        height
+     }
+     }
+     //获取媒体权限
+     navigator.mediaDevices.getUserMedia(x).then( stream=>{
+        video.srcObject=stream//
+        video.onLoadedmetadata=()=> video.play()
+     })
+
+     const btn=document.querySelector('#btn');
+     btn.onclick=function () {
+        ctx.drawImage(video,0,0,width,height)
+        document.querySelector('#img').src=canvas.toDataURL('image/png')
+  }
+ 
+  
+    
+</script>
+</html>

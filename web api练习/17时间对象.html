@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div></div>
+    <script>
+        // let date = new Date();
+        // console.log(date.getFullYear());//获取当年
+        // console.log(date.getMonth() + 1);//获取当月(0-11)
+        // console.log(date.getDate());//获取当天日期
+        // console.log("星期" + (date.getDay()));//获取当天星期几周日(0)到周六(6)
+        // console.log(date.getHours());//获取当前小时
+        // console.log(date.getMinutes());//获取当前分钟
+        // console.log(date.getSeconds());//获取当前秒钟
+        // console.log(date.valueOf());    //今天距离19701.1的毫秒数
+
+
+
+        let div = document.querySelector('div')
+        getTime()
+        setInterval(getTime, 1000)
+        function getTime() {
+            let date = new Date();
+
+            div.innerHTML = `今天是${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+
+        }
+    </script>
+</body>
+
+</html>

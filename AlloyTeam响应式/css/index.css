@@ -1,0 +1,522 @@
+body {
+  min-width: 325px;
+}
+body li {
+  list-style: none;
+}
+body a:hover {
+  text-decoration: none;
+}
+.carousel img {
+  height: 100% !important;
+}
+@media (max-width: 992px) {
+  .carousel .item {
+    height: 400px;
+  }
+  .carousel .item .oneTxt {
+    bottom: 160px;
+    right: -60px;
+    color: hsla(0, 0%, 100%, 0.8);
+    font-size: 40px;
+  }
+  .carousel .item .twoTxt {
+    bottom: 50px;
+    left: -500px;
+    color: hsla(0, 0%, 100%, 0.8);
+    font-size: 40px;
+  }
+  .carousel .item .oneTxt1 {
+    bottom: 30%;
+    right: 18%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 40px;
+  }
+  .carousel .item .twoTxt1 {
+    bottom: 14%;
+    right: 18%;
+    color: #fff;
+    font-size: 25px;
+  }
+  .carousel .item .oneTxt2 {
+    bottom: 25%;
+    right: 18%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 40px;
+  }
+  .carousel .item .twoTxt2 {
+    bottom: 14%;
+    right: 16%;
+    color: #fff;
+    font-size: 20px;
+  }
+}
+@media (max-width: 765px) {
+  .carousel .item {
+    height: 250px;
+  }
+  .carousel .item .oneTxt {
+    bottom: 20px;
+    right: 20px;
+    color: hsla(0, 0%, 100%, 0.8);
+    font-size: 28px;
+  }
+  .carousel .item .oneTxt1 {
+    bottom: 30%;
+    right: 18%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+  }
+  .carousel .item .twoTxt1 {
+    bottom: 14%;
+    right: 18%;
+    color: #fff;
+    font-size: 18px;
+  }
+  .carousel .item .oneTxt2 {
+    bottom: 25%;
+    right: 18%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+  }
+  .carousel .item .twoTxt2 {
+    bottom: 14%;
+    right: 16%;
+    color: #fff;
+    font-size: 18px;
+  }
+}
+@media (min-width: 992px) {
+  .carousel .item {
+    height: 500px;
+  }
+  .carousel .item .oneTxt {
+    bottom: 160px;
+    right: -60px;
+    color: hsla(0, 0%, 100%, 0.8);
+    font-size: 40px;
+  }
+  .carousel .item .twoTxt {
+    bottom: 50px;
+    left: -500px;
+    color: hsla(0, 0%, 100%, 0.8);
+    font-size: 40px;
+  }
+  .carousel .item .oneTxt1 {
+    bottom: 30%;
+    right: 18%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 60px;
+  }
+  .carousel .item .twoTxt1 {
+    bottom: 14%;
+    right: 18%;
+    color: #fff;
+    font-size: 45px;
+  }
+  .carousel .item .oneTxt2 {
+    bottom: 25%;
+    right: 18%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 70px;
+  }
+  .carousel .item .twoTxt2 {
+    bottom: 14%;
+    right: 16%;
+    color: #fff;
+    font-size: 40px;
+  }
+}
+.carousel .carousel-indicators li {
+  width: 50px;
+  height: 5px;
+  border-radius: 3px;
+}
+.navbar-default {
+  background-color: transparent;
+  border: 0;
+  transition: 0.5s;
+}
+.bg {
+  background-color: #26282c;
+  transition: 0.5s;
+}
+.top ul {
+  margin-top: 15px;
+}
+.top ul li {
+  font-size: 18px;
+}
+.top ul li a {
+  color: #fff !important;
+}
+.top ul li a.sizecolor {
+  color: #f2b535 !important;
+}
+.navbar-header button {
+  margin-top: 15px;
+}
+.project,
+.project1 {
+  text-align: center;
+  padding-top: 30px;
+  overflow: hidden;
+}
+.project p,
+.project1 p {
+  margin-top: 18px;
+  color: #a09f9f;
+}
+.project .container,
+.project1 .container {
+  margin-top: 15px;
+}
+.project .container div a,
+.project1 .container div a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background-color: #70c3ff;
+  transition: 0.3s;
+}
+.project .container div a img,
+.project1 .container div a img {
+  margin-top: 10%;
+  height: 60px;
+  overflow: hidden;
+  display: inline-block;
+}
+.project .container div a h5,
+.project1 .container div a h5 {
+  color: #fff;
+  font-size: 25px;
+}
+.project .container div a p,
+.project1 .container div a p {
+  color: #fff;
+  font-size: 16px;
+  padding: 0 3px;
+  padding-bottom: 15px;
+}
+.project .container div a:hover,
+.project1 .container div a:hover {
+  text-decoration: none;
+  transform: translateY(-10px);
+  transition: all 0.5s;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.project .container div a::after,
+.project1 .container div a::after {
+  content: " ";
+  display: block;
+  width: 800px;
+  height: 100px;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0));
+  left: 0;
+  top: 0;
+  transform: rotate(-45deg) translate(0, -360px);
+}
+.project .container div a:hover::after,
+.project1 .container div a:hover::after {
+  transition: 0.8s ease-in-out;
+  transform: rotate(-45deg) translate(0, 350px);
+}
+.project .container div:nth-child(2) a,
+.project1 .container div:nth-child(2) a {
+  background-color: #fd6a7f;
+}
+.project .container div:nth-child(3) a,
+.project1 .container div:nth-child(3) a {
+  background-color: #7f8ea0;
+}
+.project .container div:nth-child(4) a,
+.project1 .container div:nth-child(4) a {
+  background-color: #89d04f;
+}
+.project .btn,
+.project1 .btn {
+  margin-top: 20px;
+}
+.project1 {
+  text-align: center;
+  padding-top: 30px;
+}
+.project1 p {
+  margin-top: 18px;
+  color: #a09f9f;
+}
+.project1 .container div a {
+  background-color: #fff !important;
+  border-radius: 0;
+}
+.project1 .container div a .oppo {
+  overflow: hidden;
+}
+.project1 .container div a .oppo img {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+}
+.project1 .container div a .txt {
+  text-align: left;
+  border: 1px solid #dfdede;
+}
+.project1 .container div a .txt span {
+  display: block;
+  color: #2b2b2b;
+  font-size: 16px;
+  padding: 15px 10px;
+}
+.project1 .container div a .txt p {
+  color: #2b2b2b;
+  font-size: 16px;
+  padding: 0 10px;
+  margin: 0;
+  margin-bottom: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  /*文字超出宽度则显示ellipsis省略号*/
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.project1 .container div a::after {
+  content: " ";
+  display: none;
+}
+.project1 .container div a:hover img {
+  transition: 0.8s ease-in-out;
+  transform: scale(1.5);
+}
+.project2 {
+  text-align: center;
+}
+.project2 h3 {
+  margin-top: 30px;
+}
+.project2 p {
+  margin-top: 25px;
+  color: #656565;
+}
+.project2 .container .tat {
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.project2 .container .tat p {
+  position: relative;
+  text-align: left;
+  color: #656565;
+  font-size: 16px;
+  margin: 0 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #dfdede;
+}
+.project2 .container .tat p span {
+  position: absolute;
+  font-size: 20px;
+  right: 0;
+  top: 0;
+}
+.project2 .container .tat .con {
+  margin: 0;
+  padding: 0;
+}
+.project2 .container .tat .con li {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  padding: 10px 18px;
+  font-size: 16px;
+  color: #616161;
+}
+.project2 .container .tat .con li:hover a:nth-child(1) {
+  color: #f2b535;
+}
+.project2 .container .tat .con li a {
+  overflow: hidden;
+  white-space: nowrap;
+  /*文字超出宽度则显示ellipsis省略号*/
+  text-overflow: ellipsis;
+  width: 100%;
+  color: #616161;
+}
+.project2 .container .tat .con li .moer {
+  text-align: right;
+  margin-right: 20px;
+}
+.project2 .bk {
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.project2 .bk p {
+  position: relative;
+  text-align: left;
+  color: #656565;
+  font-size: 16px;
+  margin: 0 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #dfdede;
+}
+.project2 .bk span a {
+  position: absolute;
+  font-size: 20px;
+  right: 0;
+  top: 0;
+}
+.project2 .bk .neirong {
+  margin: 13px 0;
+}
+.project2 .bk .neirong a {
+  display: flex;
+}
+.project2 .bk .neirong a .images {
+  width: 60px;
+}
+.project2 .bk .neirong a .images img {
+  width: 100%;
+}
+.project2 .bk .neirong a .title {
+  margin-left: 5px;
+}
+.project2 .bk .neirong a .title p {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+}
+.project2 .bk .neirong a .title span {
+  display: block;
+  width: 150px;
+  font-size: 14px;
+  color: #656565;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.project2 .bk .neirong a .title:hover p {
+  color: #f2b535;
+}
+.superstar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.superstar h3 {
+  margin-top: 30px;
+}
+.superstar p {
+  margin-top: 25px;
+  color: #656565;
+}
+.superstar .container {
+  margin-top: 15px;
+}
+.superstar .container .con {
+  transition: 0.5s;
+  border: 1px solid #dfdede;
+  margin-bottom: 20px;
+}
+.superstar .container .con .top {
+  background-color: #f5f8fa;
+  padding: 10px 0;
+}
+.superstar .container .con .top img {
+  width: 120px;
+  border-radius: 60px;
+  margin: 10px auto;
+}
+.superstar .container .con .top p {
+  margin: 0;
+  font-size: 20px;
+  color: #656565;
+  margin-bottom: 20px;
+}
+.superstar .container .con p {
+  font-size: 16px;
+}
+.superstar .container .con:hover {
+  text-decoration: none;
+  transform: translateY(-10px);
+  transition: all 0.5s;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+.container-fluid .footer {
+  background-color: #26282c;
+}
+.container-fluid .footer .container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.container-fluid .footer .container .con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.container-fluid .footer .container .con p {
+  margin: 15px 10px;
+  font-size: 16px;
+  color: #9b9b9b;
+}
+.container-fluid .footer .container .con a {
+  margin: 15px 10px;
+  font-size: 16px;
+  color: #9b9b9b;
+}
+.container-fluid .footer .container .con img {
+  width: 200px ;
+}
+.container-fluid .footer .container .obb {
+  display: flex;
+}
+.container-fluid .footer .container .obb .tx {
+  display: flex;
+  flex-direction: column;
+  padding: 0 50px;
+}
+.container-fluid .footer .container .obb .tx p {
+  min-width: 60px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #cccccc;
+}
+.container-fluid .footer .container .obb .tx a {
+  min-width: 60px;
+  padding: 2px 0;
+  font-size: 14px;
+  color: #9b9b9b;
+}
+.container-fluid .footer .container .ewm {
+  display: flex;
+  justify-content: center;
+}
+.container-fluid .footer .container .ewm div {
+  padding: 50px 5px;
+}
+.container-fluid .footer .container .ewm div img {
+  width: 120px;
+  transition: 0.3s;
+}
+.container-fluid .footer .container .ewm div img:hover {
+  transition: 0.3s;
+  transform: scale(1.5);
+}
+.container-fluid .footer .container .ewm div p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #cccccc;
+}

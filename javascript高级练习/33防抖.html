@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        margin: 50px 100px;
+        background-color: rgb(178, 180, 180);
+        width: 500px;
+        height: 500px;
+        text-align: center;
+        font-size: 100px;
+    }
+</style>
+
+<body>
+    <div class="box">
+
+    </div>
+    <script src="https://lib.baomitu.com/lodash.js/3.10.1/lodash.js"></script>
+    <script>
+        function fn(){
+            box.innerHTML = i++
+        }
+        const box = document.querySelector('.box')
+        let i = 1;
+        // box.addEventListener('mousemove', fn)
+        //防抖处理
+        box.addEventListener('mousemove', _.debounce(fn,500))
+
+        // func是用户传入需要防抖的函数
+// wait是等待时间，若不传参，默认50ms
+// 因为闭包，timer将一直在内存中
+// const debounce = (func, wait = 50) => {
+//     // 缓存一个定时器
+//     let timer = null;
+//     // 返回的函数是每次用户实际调用的防抖函数
+//     return (...args) => {
+//         // 如果已经设定过定时器了就清空上一次的定时器
+//         if (timer) clearTimeout(timer);
+//         // 开始一个新的定时器，延迟执行用户传入的方法
+//         timer = setTimeout(() => {
+//             func.apply(this, args);
+//         }, wait);
+//     };
+// };
+
+    </script>
+</body>
+
+</html>

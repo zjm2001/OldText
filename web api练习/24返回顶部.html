@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .box {
+        width: 1000px;
+        height: 3000px;
+        background-color: pink;
+        margin: 0 auto;
+       
+    }
+
+    .top {
+        display: none;
+        text-align: center;
+        position: fixed;
+        left: 50%;
+        margin: 0 0 0 505px;
+        bottom: 60px;
+        background-color: blueviolet;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        cursor: pointer;
+     
+    }
+</style>
+
+<body>
+    <div class="box">
+    </div>
+    <span class="top">返回顶部</span>
+
+    <script>
+       let btn=document.querySelector('.top')
+        // console.log(top);
+        window.addEventListener('scroll',function(){
+            // console.log(document.documentElement.scrollTop);
+            if(document.documentElement.scrollTop>=400){
+                btn.style.display='block'
+            }else{
+                btn.style.display='none'
+            }
+        })
+        btn.addEventListener('click',function(){
+            document.documentElement.scrollTop=0
+        })
+    </script>
+
+</body>
+
+</html>

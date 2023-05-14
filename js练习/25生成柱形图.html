@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        display: flex;
+        width: 700px;
+        height: 300px;
+        margin: 50px auto;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        justify-content: space-around;
+        /* 每个子集都有相同间距(中间子集间距为2倍的子集间距) */
+        align-items: flex-end;
+        /* 单行侧轴从下到上排列 */
+        text-align: center;
+    }
+
+    .box>div {
+        display: flex;
+        width: 50px;
+        background-color: aquamarine;
+        /* 更改y为主轴 */
+        flex-direction: column;
+        /* 贴平两边再评分       */
+        justify-content: space-between;
+    }
+
+    .box div span {
+        margin-top: -20px;
+    }
+
+    .box div h4 {
+        margin-bottom: -35px;
+        width: 70px;
+        margin-left: -10px;
+    }
+</style>
+
+<body>
+
+
+    <div class="box">
+        <div style="height: 123px;">
+            <span>123</span>
+            <h4>第一季度</h4>
+        </div>
+        <div style="height: 100px;">
+            <span>100</span>
+            <h4>第二季度</h4>
+        </div>
+        <div style="height: 123px;">
+            <span>123</span>
+            <h4>第三季度</h4>
+        </div>
+        <div style="height: 123px;">
+            <span>123</span>
+            <h4>第四季度</h4>
+        </div>
+        <div style="height: 123px;">
+            <span>123</span>
+            <h4>第五季度</h4>
+        </div>
+        <div style="height: 123px;">
+            <span>123</span>
+            <h4>第六季度</h4>
+        </div>
+    </div>
+    <script>
+        //方法一
+        // let quarter1 = +prompt('输入第一季度数量')
+        // let quarter2 = +prompt('输入第2季度数量')
+        // let quarter3 = +prompt('输入第3季度数量')
+        // let quarter4 = +prompt('输入第4季度数量')
+        // let arr = [quarter1, quarter2, quarter3, quarter4]
+        // let qa = document.querySelectorAll('.box>div');
+        // let txt = document.querySelectorAll('.box div span')
+        // for (let i = 0; i < qa.length; i++) {
+        //        qa[i].style.height=arr[i]+'px'
+        //        txt[i].innerHTML=arr[i]
+        // }
+
+        //方法二
+        let arr = []
+        let qa = document.querySelectorAll('.box>div');
+        let txt = document.querySelectorAll('.box div span')
+        for (let i = 0; i < qa.length; i++) {
+            arr[i] = +prompt(`请输入第${i + 1}季度数据`)
+            qa[i].style.height = arr[i] + 'px'
+            txt[i].innerHTML = arr[i]
+
+        }
+        console.log(arr);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,638 @@
+//轮播图
+body {
+    min-width: 325px;
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.carousel {
+
+    //判断视口大小给定图片大小
+    img {
+        height: 100% !important;
+    }
+
+    @media (max-width:992px) {
+        .item {
+            height: 400px;
+
+            .oneTxt {
+                bottom: 160px;
+                right: -60px;
+                color: hsla(0, 0%, 100%, .8);
+                font-size: 40px
+            }
+
+            .twoTxt {
+                bottom: 50px;
+                left: -500px;
+                color: hsla(0, 0%, 100%, .8);
+                font-size: 40px
+            }
+
+            .oneTxt1 {
+                bottom: 30%;
+                right: 18%;
+                color: #fff;
+                font-weight: 700;
+                font-size: 40px
+            }
+
+            .twoTxt1 {
+                bottom: 14%;
+                right: 18%;
+                color: #fff;
+                font-size: 25px
+            }
+
+            .oneTxt2 {
+                bottom: 25%;
+                right: 18%;
+                color: #fff;
+                font-weight: 700;
+                font-size: 40px
+            }
+
+            .twoTxt2 {
+                bottom: 14%;
+                right: 16%;
+                color: #fff;
+                font-size: 20px
+            }
+
+        }
+    }
+
+    @media (max-width:765px) {
+        .item {
+            height: 250px;
+
+            .oneTxt {
+                bottom: 20px;
+                right: 20px;
+                color: hsla(0, 0%, 100%, .8);
+                font-size: 28px
+            }
+
+            .oneTxt1 {
+                bottom: 30%;
+                right: 18%;
+                color: #fff;
+                font-weight: 700;
+                font-size: 28px
+            }
+
+            .twoTxt1 {
+                bottom: 14%;
+                right: 18%;
+                color: #fff;
+                font-size: 18px
+            }
+
+            .oneTxt2 {
+                bottom: 25%;
+                right: 18%;
+                color: #fff;
+                font-weight: 700;
+                font-size: 28px
+            }
+
+            .twoTxt2 {
+                bottom: 14%;
+                right: 16%;
+                color: #fff;
+                font-size: 18px
+            }
+        }
+    }
+
+    @media (min-width:992px) {
+        .item {
+            height: 500px;
+
+            .oneTxt {
+                bottom: 160px;
+                right: -60px;
+                color: hsla(0, 0%, 100%, .8);
+                font-size: 40px
+            }
+
+            .twoTxt {
+                bottom: 50px;
+                left: -500px;
+                color: hsla(0, 0%, 100%, .8);
+                font-size: 40px
+            }
+
+            .oneTxt1 {
+                bottom: 30%;
+                right: 18%;
+                color: #fff;
+                font-weight: 700;
+                font-size: 60px
+            }
+
+            .twoTxt1 {
+                bottom: 14%;
+                right: 18%;
+                color: #fff;
+                font-size: 45px
+            }
+
+            .oneTxt2 {
+                bottom: 25%;
+                right: 18%;
+                color: #fff;
+                font-weight: 700;
+                font-size: 70px
+            }
+
+            .twoTxt2 {
+                bottom: 14%;
+                right: 16%;
+                color: #fff;
+                font-size: 40px
+            }
+
+        }
+    }
+
+    .carousel-indicators li {
+        width: 50px;
+        height: 5px;
+        border-radius: 3px;
+    }
+}
+
+//顶部导航
+.navbar-default {
+    background-color: transparent;
+    border: 0;
+    transition: .5s;
+}
+.bg{
+    background-color:#26282c;
+    transition: .5s;
+}
+.top {
+    ul {
+        margin-top: 15px;
+
+        li {
+            font-size: 18px;
+
+            a {
+                color: #fff !important;
+
+                &.sizecolor {
+                    color: #f2b535 !important;
+
+                }
+            }
+        }
+    }
+}
+
+.navbar-header {
+    button {
+        margin-top: 15px;
+    }
+}
+
+.project,
+.project1 {
+    text-align: center;
+    padding-top: 30px;
+    overflow: hidden;
+
+    p {
+        margin-top: 18px;
+        color: rgb(160, 159, 159);
+    }
+
+    .container {
+        margin-top: 15px;
+
+        div {
+
+            // background-color: #f2b535;
+            a {
+                position: relative;
+                display: block;
+                overflow: hidden;
+                border-radius: 8px;
+                margin-bottom: 15px;
+                background-color: #70c3ff;
+                transition: .3s;
+
+                img {
+                    margin-top: 10%;
+                    height: 60px;
+                    overflow: hidden;
+                    display: inline-block;
+                }
+
+                h5 {
+                    color: #fff;
+                    font-size: 25px;
+                }
+
+                p {
+                    color: #fff;
+                    font-size: 16px;
+                    padding: 0 3px;
+                    padding-bottom: 15px;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    // transform:scale(1.05);
+                    transform: translateY(-10px);
+                    transition: all 0.5s;
+                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+                }
+
+                &::after {
+                    content: " ";
+                    display: block;
+                    width: 800px;
+                    height: 100px;
+                    position: absolute;
+                    background: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));
+                    left: 0;
+                    top: 0;
+                    transform: rotate(-45deg) translate(0, -360px);
+                }
+
+                &:hover::after {
+                    transition: .8s ease-in-out;
+                    transform: rotate(-45deg) translate(0, 350px);
+                }
+            }
+
+            &:nth-child(2) a {
+                background-color: #fd6a7f;
+            }
+
+            &:nth-child(3) a {
+                background-color: #7f8ea0;
+            }
+
+            &:nth-child(4) a {
+                background-color: #89d04f;
+            }
+        }
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+}
+
+// 作品区域
+.project1 {
+    text-align: center;
+    padding-top: 30px;
+
+    p {
+        margin-top: 18px;
+        color: rgb(160, 159, 159);
+    }
+
+    .container {
+        div {
+            a {
+                background-color: #fff !important;
+                border-radius: 0;
+
+                .oppo {
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        margin-top: 0;
+                    }
+                }
+
+                .txt {
+                    text-align: left;
+                    border: 1px solid rgb(223, 222, 222);
+
+                    span {
+
+                        display: block;
+                        color: rgb(43, 43, 43);
+                        font-size: 16px;
+                        padding: 15px 10px;
+                        // margin-bottom: 10px;
+                    }
+
+                    p {
+                        color: rgb(43, 43, 43);
+                        font-size: 16px;
+                        padding: 0 10px;
+                        margin: 0;
+                        margin-bottom: 15px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        /*文字超出宽度则显示ellipsis省略号*/
+                        text-overflow: ellipsis;
+                        width: 100%;
+                    }
+                }
+
+                &::after {
+                    content: " ";
+                    display: none;
+                }
+
+                &:hover img {
+                    transition: .8s ease-in-out;
+                    transform: scale(1.5);
+                }
+            }
+
+        }
+    }
+}
+
+//博客区域
+.project2 {
+    text-align: center;
+
+    h3 {
+        margin-top: 30px;
+    }
+
+    p {
+        margin-top: 25px;
+        color: #656565;
+    }
+
+    .container {
+        .tat {
+            width: 100%;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+
+            p {
+                position: relative;
+                text-align: left;
+                color: #656565;
+                font-size: 16px;
+                margin: 0 15px;
+                padding: 10px 0;
+                border-bottom: 1px solid rgb(223, 222, 222);
+                // &::after {
+                //     position: absolute;
+                //     content: "... ";
+                //     right: 0;
+                //     top: 0;
+                //     font-size: 20px;
+
+                // }
+                span {
+                    position: absolute;
+                    font-size: 20px;
+                    right: 0;
+                    top: 0;
+                }
+            }
+
+            .con {
+                margin: 0;
+                padding: 0;
+
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    text-align: left;
+                    padding: 10px 18px;
+                    font-size: 16px;
+                    color: #616161;
+
+                    &:hover a:nth-child(1) {
+                        color: #f2b535;
+                    }
+
+                    a {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        /*文字超出宽度则显示ellipsis省略号*/
+                        text-overflow: ellipsis;
+                        width: 100%;
+                        color: #616161;
+                    }
+
+                    .moer {
+                        text-align: right;
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    //   博客
+    .bk {
+        width: 100%;
+        // height: 400px; 要清除浮动
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+
+        p {
+            position: relative;
+            text-align: left;
+            color: #656565;
+            font-size: 16px;
+            margin: 0 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgb(223, 222, 222);
+
+        }
+
+        span {
+            a {
+                position: absolute;
+                font-size: 20px;
+                right: 0;
+                top: 0;
+            }
+
+        }
+
+        .neirong {
+            margin: 13px 0;
+
+            a {
+                display: flex;
+
+                .images {
+                    width: 60px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .title {
+                    margin-left: 5px;
+
+                    p {
+                        border: 0;
+                        margin: 0;
+                        padding: 0;
+                        margin-top: 15px;
+                    }
+
+                    span {
+                        display: block;
+                        width: 150px;
+                        font-size: 14px;
+                        color: #656565;
+                        text-align: left;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+
+                    }
+
+                    &:hover p {
+                        color: #f2b535;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+//超级明星区域
+.superstar {
+    text-align: center;
+    margin-bottom: 20px;
+
+    h3 {
+        margin-top: 30px;
+    }
+
+    p {
+        margin-top: 25px;
+        color: #656565;
+    }
+    .container{
+        margin-top: 15px;
+        .con{
+             transition: 0.5s;
+            border: 1px solid rgb(223, 222, 222);
+            margin-bottom: 20px;
+            .top{
+                background-color: #f5f8fa;
+                padding: 10px 0;
+                img{
+                    width: 120px;
+                    border-radius: 60px;
+                    margin: 10px auto;
+                }
+                p{
+                    margin: 0;
+                    font-size: 20px;
+                    color: #656565;
+                    margin-bottom: 20px;
+                }
+            }
+            p{
+                font-size: 16px;
+            }
+            &:hover{
+                text-decoration: none;
+                // transform:scale(1.05);
+                transform: translateY(-10px);
+                transition: all 0.5s;
+                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+.container-fluid{
+    margin: 0;
+    padding: 0;
+    .footer{
+        background-color: #26282c;
+        // height: 300px;
+        .container{
+           padding-top: 20px;
+           padding-bottom: 20px;
+           .con{
+            display: flex;
+            flex-direction: column;
+           align-items: center;
+            margin-top: 20px;
+            p{
+                margin: 15px 10px;
+                font-size: 16px;
+                color: rgb(155, 155, 155);
+            }
+            a{
+                margin: 15px 10px;
+                font-size: 16px;
+                color: rgb(155, 155, 155);  
+            }
+            img{
+                
+                width:200px ;
+            }
+           }
+           .obb{
+            display: flex;
+            .tx{
+                display: flex;
+                flex-direction: column;
+                padding: 0 50px;
+                p{
+                    min-width: 60px;
+                    margin-top: 20px;
+                    font-size: 14px;
+                    color: rgb(204, 204, 204);
+                }
+                a{
+                    min-width: 60px;
+                    padding: 2px 0;
+                    font-size: 14px;
+                    color: rgb(155, 155, 155);
+                }
+               }
+           }
+           .ewm{
+            display: flex;
+            justify-content: center;
+             div{
+                padding: 50px 5px;
+                img{
+                    width: 120px;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        transform: scale(1.5);
+                    }
+                }
+                p{
+                    margin-top: 10px;
+                    font-size: 14px;
+                    color: rgb(204, 204, 204);
+                }
+             }
+           }
+        }
+    }
+}

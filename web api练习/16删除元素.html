@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <ul>
+        <li>大多数大大</li>
+    </ul>
+    <script>
+        let btn =document.querySelector('button')
+        btn.addEventListener('click',function(){
+            this.nextElementSibling.removeChild( this.nextElementSibling.children[0])
+            // console.log( this.nextElementSibling);
+        })
+    </script>
+</body>
+</html>

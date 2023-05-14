@@ -1,0 +1,825 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>移动端布局及Bootstrap</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		/* 更改一 */
+		color: rgb(189, 188, 186);
+		margin: 0 auto;
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	/* 更改二 */
+	background: rgb(47, 47, 47);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="52b2507f-1b1e-4f76-a677-2d61af1d6fbe" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_11.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">👌🏾</span></div><h1 class="page-title">移动端布局及Bootstrap</h1></header><div class="page-body"><ul id="cdd6cf55-417b-4731-9a36-251f1fb5d416" class="toggle"><li><details><summary><strong>视口viewport以及二倍图</strong></summary><p id="6f463566-bcbc-4fa4-a8ad-7ef2789e58f3" class=""><strong>1.1 视口是什么</strong></p><pre id="bb724614-0131-4ada-813d-a262c8cecce1" class="code"><code>viewport                                                 //视口
+&lt;meta
+initial-scale                            初始缩放比大于0的数字
+maxium-scale                        最大缩放比 大于零的数字
+minium-scale                        最小缩放比 大一零数字
+user-scalable             用户是否可以缩放 yes或者no（1或0）        //视口标签
+一般情况vscode会自己生成好</code></pre><p id="7ba7987d-a918-4072-94b8-c123f7f6bc81" class=""><strong>1.2 二倍图</strong></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="047aee18-96bb-4975-8fd0-02e4b38e3606"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">物理像素就是我们说的分辨率
+px是开发像素   在苹果八中1px开发像素=2个物理像素
+视网膜屏下图片给我们放大会模糊开发图片应当大屏幕像素比倍数然后再更改大小
+这就是二倍图多倍图的设计<p id="73373d5e-07d1-4cff-ae27-ff556ada0e80" class="">background-sizi：图片宽  图片高                  //背景！图缩放写一个是宽高就等比例缩放
+（可以百分比）继承父亲
+cover         完全覆盖盒子            </p><p id="054878d3-75bc-4fe1-aecb-1c5b6ea40a0b" class="">contain     图像扩展至最大尺寸</p><p id="523bf066-7091-408e-ae68-a9cf580b78d4" class="">
+移动端css初始化     推荐使用  normalize.css
+官网    <a href="http://necolas.github.io/normalize.css/">http://necolas.github.io/normalize.css/</a>
+流式布局（称为百分比布局）
+应该设置最大最小值避免影响盒子内容影响
+max-width                 //最大宽度
+mix-width                  //最小宽度（高度也是一样）
+移动端使用精灵图应当缩放然后再测量大小</p></div></figure><p id="c3c494ef-3494-45e5-be70-5b8d97dd162a" class="">
+</p></details></li></ul><ul id="663e8198-2b3e-4cd7-a12f-797cc9929067" class="toggle"><li><details><summary><strong><mark class="highlight-pink">Flex布局</mark></strong></summary><p id="14a8fe05-15f3-4863-8a61-07f916b25e0e" class="">2.1  Flex布局Flex容器属性</p><pre id="110e6c3a-7f0e-4f3f-a692-b9ba2b0d0c74" class="code"><code>给父亲加flex盒子称为flex容器其中的子元素自动成为容器成员来操纵里面成员
+对父元素设置的
+flex-direction                （x轴默认主轴 元素按照主轴排列）           //主轴的方向
+row                     默认从左到右
+row-reverse             从右到左
+column                  从上到下（设置y为主轴）
+column -reverse         从下到上
+
+
+justify-content                                            //设置主轴上子元素排列方式
+flex-start                默认值从头部开始
+flex-end                  从尾部开始排列
+center                    再主轴居中对齐
+space-evenly             所有地方间距相等
+space-around             每个子集都有相同间距(中间子集间距为2倍的子集间距)
+space-between            先两边贴边再平分剩余空间   ！！！
+
+
+flex-wrap                                                        //设置子元素是否换行
+nowrap                 默认不换行 一行装不下会缩小子元素宽度
+wrap                   换行向下
+wrap-reverse           向上换行
+
+
+align-items                                          //设置侧轴上子元素排列方式(单行)
+flex-start             从上到下
+flex-end               从下到上
+center                 挤再一起居中（垂直居中）
+stretch                拉伸(默认)
+flex-flow              复合属性，相当于同时设置flex-direction  flex-wrap
+
+
+align-content                                        //设置侧轴上子元素排列方式(多行)
+flex-start              默认从侧轴头部开始排列
+flex-end                再侧轴尾部开始排列
+center                  侧轴中间显示
+space-around            子项在侧轴平分剩余空间
+space-between           子项再侧轴先分布两头，再平均分
+stretch                 设置子项元素高度平分父元素高度
+</code></pre><p id="453ab88d-b119-4c27-9596-d871adac8111" class="">2.2 Flex 元素(儿子的属性)</p><pre id="a5b99dfb-319a-4b4c-a5ab-34659837fcc2" class="code"><code>
+flex ：1；                                           // 分配剩余空间份数
+
+align-self :                                         //控制子项自己一个再侧轴排列
+auto                    默认值继承父亲align-items没有父容器为stretch
+stretch                 拉伸充满
+center                  元素中心显示
+flex-start              元素容器开头
+flex-end                元素容器结尾
+baseline                位于元素容器基线上
+
+order:                                               //定义排列顺序  越小越靠前默认0
+</code></pre></details></li></ul><ul id="0ca87f1b-43d3-43d5-8c37-1d4811a4502f" class="toggle"><li><details><summary><mark class="highlight-pink"><strong>媒体查询以及移动端布局方式</strong></mark></summary><p id="dcb64591-448d-430f-8bef-24b60b9b651e" class=""><strong>3.1 媒体查询</strong></p><pre id="1bebcd44-40ce-45ca-ac90-e97474460fa9" class="code"><code>@media   媒体类型 and   (媒体特征){                        //媒体查询
+}
+mediatype             媒体类型值
+all                   所有设备
+print                 打印机打印预览
+scerr                 电脑 平板 手机
+
+关键字
+and                  连接 相当于且
+not                  排除某个相当于非
+only                 指定某个特定
+
+媒体特性
+width              定义输出设备界面可见区域宽度
+min-width          定义输出设备中页面最小可见宽度
+max-width         定义输出设备最大可见区域宽度
+引入资源就是针对不同的屏幕尺寸调用不同的css文件
+&lt;link  rel=&quot;stylesheet&quot;  href=&#x27;&#x27;css文件  &quot; media =&quot;screen and (媒体特征)&quot;&gt;
+
+书写顺序   应该从小到大写
+min-width(从小到大)
+max -width(从大到小)</code></pre><p id="8297de4e-b587-4bd5-adb0-ccb6f069b6a0" class=""><strong>3.2 rem单位以及vw与vh</strong></p><pre id="3bd8bd56-6519-4c9a-b2dd-4c541d092271" class="code"><code>可通过修改html里面的文大小来给变页面中元素大小控制整体
+当设置
+html{
+   font-size:30px          1个rem 等同于 30px
+}
+可使用媒体查询改变html文字大小实现不同屏幕下的布局
+flexible.js  使用rem 将屏幕分为10份(如在365px屏幕下一个rem就是36.5px)
+使用插件要更改css root才能转换为要使用的rem
+还是要给屏幕给一个超过你所要项目大小就将font-sizi改好
+记得提权!important
+
+相对单位根据屏幕可见视口分成100分1个就是一份
+(一般只使用一个不会vw wh一起用 对全面屏手机不友好)
+vw(viewport width)
+1vw = 1/100视口宽度
+vh(viewport height)
+1vh = 1/100视口宽度</code></pre></details></li></ul><ul id="4d60b972-eed7-42ef-9340-909691c4778f" class="toggle"><li><details><summary>Less 与Scss</summary><p id="8ed4c34f-a7f6-446a-92fe-79cb9ebf7518" class=""><strong>4.1 Less</strong>
+<mark class="highlight-pink">把less文件导入</mark></p><pre id="b16c49f1-8aef-46d1-9ceb-75e205e4a2fe" class="code"><code> 使用less直接新建less文件
+ html不能直接使用less   vscode中插件easy less
+ 下载后保存less文件回自动生成css文件然后html引用
+1.0  less中变量的声明
+    @变量名:值;
+2.0 less书写嵌套规则
+less嵌套 子元素样式直接写在父元素里面就好了
+如果有伪类  交集选择器  伪元素选择器  我们内层选择器前面加&amp;
+3.0 less运算
+颜色16进制也可以运算
+可以进行加减乘除运算   除法运算要加(15 / 2px )
+运算符左右都要敲空格
+两个数参与运算 如果只有一个有单位,则与有单位的为准
+两个数参与运算 ,如果2个都有单位 且不一样以第一个单位为准</code></pre><p id="e9d30e26-2d4a-47a7-b924-1c15f232fbd6" class=""><strong>4.2 less文件操作</strong></p><pre id="faf69b5d-3ab5-453b-839a-2e6bcb129dc1" class="code"><code>@import &quot;less名&quot;          文件导入
+less导出文件到指定文件夹
+方法一
+配置easyless产检实现
+设置→搜索easyless→在setting.json中编辑
+json文件中添加代码
+&quot;out&quot;: &quot;路径最后要加/&quot;
+方法二
+less文件中添加
+// out: 路径也要加斜杠
+
+禁止导出
+less第一行添加
+// out:false</code></pre><p id="969de5d8-755b-4544-8e38-2085ce734a98" class=""><strong>4.3  scss</strong></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9b341a70-939b-4d27-8255-ab18523db275"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">sass使用$来标记变量   $变量名: 变量值<p id="0197d2eb-95ac-4672-a9bf-f40f36977ddd" class="">也可以变量符合属性    块级中声明只能在块级中使用 </p><p id="ff442126-0da7-4759-beb9-9bdd8b62b412" class="">&amp;选择父级             (其他使用基本和less保持一致)</p></div></figure></details></li></ul><ul id="83e5ad4d-bd71-4469-9e1c-7b5d185c1f7a" class="toggle"><li><details><summary>Bootstrap</summary><p id="74f76ce5-8981-410e-9efa-fe14d3b320e6" class=""><strong>5.1 简单使用</strong></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="bef7368f-0523-43f7-8839-652dd18131be"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">官方文档   <a href="https://v3.bootcss.com/">https://v3.bootcss.com/</a><p id="6cdc71bf-96da-4435-aee4-ba916c14e5e5" class="">引入插件需要先引入jq文件在引自己的js文件</p><p id="bd655804-d063-4dbd-a07d-7ef232375a19" class="">布局容器
+.container    响应式布局容器分大屏小萍</p><p id="a2424841-73a2-4935-be5b-f75689c93685" class="">.container-fluid  流式布局百分比宽度</p></div></figure><p id="f485e669-0ee9-4e24-97ed-bf0fdd02501d" class="">5.2 栅格系统</p><pre id="70bd4e27-e99d-4f89-b85d-e252ade7edb7" class="code"><code>把视口尺寸分成12等分
+行 row
+列 colu
+小屏(手机)                   .col-xs-占列份数
+小屏设备(平板 )            .col-sm-占列份数
+中等                           .col-md-占列份数
+宽屏                           .col-lg-占列份数
+列嵌套最好加一个行 row
+列偏移
+.col-类型-offset-偏移份数
+列排序
+.col-leix-push-要推的份数
+.col-leix-pull-要拉的份数
+响应式工具
+hidden-类型           就会某个屏幕下隐藏
+visible-leix          就会再某一个屏幕下显示
+</code></pre><p id="834c4ca5-c73b-4186-8c0e-c8909ef11121" class="">
+</p></details></li></ul><p id="dd37f37d-a3da-4951-93e7-2a903053938c" class="">
+</p></div></article></body></html>

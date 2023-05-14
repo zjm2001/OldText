@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./fullpage/jquery.fullpage.css">
+<style>
+    .one{
+        background-color: aqua;
+    }
+    .two{
+        background-color: rgb(55, 87, 173);
+    }
+    .three{
+        background-color: rgb(209, 93, 190);
+    }
+</style>
+<body>
+    <div id="fullpage">
+        <div class="section one" >第adsdadsad一屏</div>
+        <div class="section two">第sdasdsadas二屏</div>
+        <div class="section three">第三sadasdasdas屏</div>
+    </div>
+
+
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./fullpage/jquery.fullpage.min.js"></script>
+    <script>
+        $('#fullpage').fullpage({
+            navigation:true, //显示导航
+            navigationPosition:'left', //导航位置
+            anchors:['one','two','three'],  //锚点地址栏
+            afterLoad(a,b){
+                console.log(a);  //返回地址和索引
+                console.log(b);
+            }
+
+        })
+    </script>
+</body>
+
+</html>

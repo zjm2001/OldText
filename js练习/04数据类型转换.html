@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+     
+       <label for="two">女<input type="radio" id="two" value="" name="two"></label>
+    <script>
+        //自动将22转化为字符串
+        console.log("阿萨达多" + 22);
+        console.log(10 + '10');  //1010字符串
+        console.log(10 - '10');  //0  隐式转化为数字型进行运算
+        // 除 +号如- * /  都会转化为数字型
+        // +号作为正号解析可以转化为数字类型
+        let num = '10'
+        let num1 = 11;
+        console.log(num, typeof num); //字符串类型
+        console.log(+num, typeof +num); //数字型
+        console.log(10 + +num, typeof (10 + +num)); //数字型
+        //显示转化
+        console.log(Number(num));
+        console.log(parseInt(10.1111));//转化为整型不会四舍五入
+        console.log(parseFloat(10.1111));//转化为数字型,会保留小数
+        //转化为字符串
+        console.log(typeof (String(10)));
+        console.log(typeof(num1.toString())); //可操作转进制
+        console.log(num1.toString(2));//11用二进制表示
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const obj = {
+            uname: 'zjm',
+            age: 21
+        }
+        const { uname, age } = obj
+        console.log(uname)
+        console.log(age)
+        //重命名
+        const { uname:name, age:num } = obj
+        console.log(name)
+        console.log(num)
+    // 解构数组对象
+    const  pig =[{
+        uname:'佩奇',
+        age:88
+    }]
+    const [{uname:p,age:sum}]=pig
+    console.log(p)
+    console.log(sum)
+
+    //多级对象解构
+    const  obj2 ={
+        uname:'佩奇',
+        family:{
+            mother:'猪妈妈',
+            father:'猪爸爸',
+            sister:'乔治'
+        },
+        age:60
+    }
+    const {uname:x,family:{mother,father,sister},age:y} =obj2
+    </script>
+</body>
+
+</html>

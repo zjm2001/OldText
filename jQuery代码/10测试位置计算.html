@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        position: relative;
+        top: 50px;
+        margin: 20px auto;
+        background-color: pink;
+        width: 500px;
+        height: 500px;
+    }
+
+    .one {
+        width: 300px;
+        height: 300px;
+        background-color: aqua;
+
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="one">
+
+        </div>
+    </div>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script>
+        console.log($('.box').offset())    //定位加外边距
+        console.log($('.box').position())   //定位
+        console.log($('.one').offset())    //定位加外边距
+        console.log($('.one').position())//最近定位的
+
+    </script>
+</body>
+
+</html>

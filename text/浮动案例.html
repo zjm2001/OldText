@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动案例</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .clearfix:before,
+    .clearfix:after {
+        content: "";
+        display: table;
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+    .clearfix {
+        *zoom: 1;
+    }
+
+    .top {
+        height: 40px;
+        background-color: #333;
+    }
+
+    .main {
+        margin: auto;
+        width: 1226px;
+        height: 100%;
+    }
+
+    .main div:nth-child(1) {
+        width: 100%;
+        height: 100px;
+        background-color: pink;
+    }
+
+    .main div:nth-child(2) {
+        float: left;
+        width: 234px;
+        height: 460px;
+        background-color: #ffa500;
+    }
+
+    .main div:nth-child(3) {
+        float: right;
+        width: 992px;
+        height: 460px;
+        background-color: #87ceeb;
+    }
+
+    .footer {
+        height: 50px;
+        background-color: #141414;
+    }
+</style>
+
+<body>
+    <div class="top">top</div>
+    <div class="main clearfix">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="footer">bottom</div>
+</body>
+
+</html>

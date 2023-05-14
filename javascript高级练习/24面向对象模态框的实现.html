@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+button{
+    width: 120px;
+    height: 50px;
+    margin-top: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.modal{
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%);
+    width: 500px;
+    height: 300px;
+    background-color: rgb(94, 95, 95);
+    
+}
+.modal .header{
+    font-size: 25px;
+    font-weight: 500;
+}
+.modal .header i{
+    cursor: pointer;
+    float: right;
+    padding:0 20px
+}
+.body{
+    margin-top: 80px;
+    text-align: center;
+}
+</style>
+<body>
+    <button id="delete">删除</button>
+    <button id="login">登录</button>
+     <!-- <div class="modal">
+        <div class="header">温馨提醒<i>x</i></div>
+        <div class="body">没有删除权限操作</div>
+     </div> -->
+    <script>
+        function Model(...arr){
+            //创建div标签
+            this.modalBox=document.createElement('div')
+            this.modalBox.className='modal'
+            this.modalBox.innerHTML=`
+            <div class="header">${arr[0]}<i>x</i></div>
+           <div class="body">${arr[1]}</div>
+            `
+            // console.log(this.modalBox)
+            // console.log(arr)
+        }
+        // new Model('wxts','bx')
+        //构造函数添加挂载原型方法
+        Model.prototype.open=function(){
+            const box =document.querySelector('.modal')
+            box && box.remove()
+            //创建的盒子显示到body页面中
+            document.body.append(this.modalBox)
+            this.modalBox.querySelector('.header i').addEventListener('click',()=>{
+                //使用箭头函数使得this指向的还是构造函数实例对象
+                this.close()
+            })
+        }
+        //关闭模态框
+        Model.prototype.close=function(){
+            this.modalBox.remove()
+        }
+
+        //点击删除添加按钮
+        document.querySelector('#delete').addEventListener('click',()=>{
+            const del=new Model('温馨提醒','您没有权限')
+            del.open()
+        })
+        document.querySelector('#login').addEventListener('click',()=>{
+            const login=new Model('友情提醒','您没有注册')
+            login.open()
+        })
+    </script>
+</body>
+</html>

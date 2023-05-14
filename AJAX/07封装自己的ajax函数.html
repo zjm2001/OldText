@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./lib/jquery.js"></script>
+    <button id="btnGET">发起get请求</button>
+    <button id="btnpost">发起post请求</button>
+    <script>
+        //封装处理data数据
+        function resData(data) {
+            let arr = []
+            for (let k in data) {
+                let str = `${k}=${data[k]}`
+                arr.push(str)
+            }
+            return arr.join('&')
+        }
+        //  console.log(resData({name:'11ll',age:'200'}));   
+        function zjm(options) {
+            let xhr = new XMLHttpRequest()
+            let qs = resData(options.data)    //外界传递参数
+            if (options.method.toUpperCase() === 'GET') {
+                xhr.open('GET', `${options.url}?${qs}`)
+                xhr.send()
+            } else if (options.method.toUpperCase() === 'POST') {
+                xhr.open('POST', options.url)
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+                xhr.send(qs)
+            }
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let result = JSON.parse(xhr.responseText)
+                    options.success(result)
+                }
+            }
+
+
+        }
+    </script>
+    <script>
+   $(function () {
+      $('#btnpost').on('click', function () {
+      zjm({
+        method:'post',
+        url:'http://www.liulongbin.top:3006/api/addbook',
+        data:  {bookname:'zzz',author:'zjm11',publisher:'jx图书馆11'},
+        success:(res)=>{console.log(res);}
+      })
+      })
+    })
+       $(function () {
+      $('#btnGET').on('click', function () {
+      zjm({
+        method:'get',
+        url:'http://www.liulongbin.top:3006/api/getbooks',
+        success:(res)=>{console.log(res);}
+      })
+      })
+    })
+    </script>
+</body>
+
+</html>

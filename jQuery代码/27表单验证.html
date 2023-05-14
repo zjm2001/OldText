@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <p> <span>昵称:</span><input data-required type="text" name="nickname" ></p>
+        <p><span>密码:</span><input  
+            data-required 
+            data-pattern=".{6,}"
+            data-describedby="pass"
+            data-description="password"
+            type="password" 
+            name="password"> 
+            <i id="pass"></i>
+        </p>
+        <p>
+            <lable>
+                <input type="checkbox" name="agerr">
+                同意协议
+            </lable>
+        </p>
+        <p><button class="btn">提交</button></p>
+    </form>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./jquery-validate/jquery-validate.min.js"></script>
+    <script>
+        $('form').validate({
+            sendForm:false,  //阻止默认行为
+            description:{
+                //写验证错信息
+                password:{
+                    required:'密码不能为空', //空格式的报错
+                    pattern:'格式错误'     //正则类报错
+                }
+            },
+             valid(){
+                console.log('验证成功函数');
+            },
+            invalid(){
+                console.log('验证失败函数');
+            }
+        }
+           
+        )
+    </script>
+</body>
+</html>

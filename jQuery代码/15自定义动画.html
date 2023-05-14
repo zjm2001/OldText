@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+    <button>动画一</button>
+    <button>动画二</button>
+
+
+    <div class="box">22222</div>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script>
+        $('button:first').click(function(){
+            $('.box').stop().animate({
+                width: '200',
+                backgroundColor: '#00ff00',
+                color: '#eb2202'
+            }, 3000);
+        })
+        $('button:last').click(function(){
+            $('.box').stop().animate({
+                width: '100',
+                backgroundColor: '#00ff00',
+                color: '#eb2202'
+            }, 3000);
+        })
+    </script>
+</body>
+</html>

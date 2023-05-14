@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.打印0到20之间的整数 输出控制台
+        // let i = 0
+        // let sum = 0
+        // while (i <= 20) {
+        //     console.log(i)
+
+        //     i++
+        // }
+        // 2. 计算1到1000之间的和
+        // let sum = 0
+        // let i = 1
+        // while (i <= 1000) {
+        //     sum = sum + i
+        //     i++
+        // }
+        // console.log(sum);
+        // 3. 用户输入多少就计算到多少的和
+        // let sum = +prompt('从一计算到多少')
+        // let i = 1
+        // let j = 0
+        // while (i <= sum) {
+        //     j = j + i
+        //     i++
+        // }
+        // console.log(j);
+        //  用户输入用户名和密码不然一直输入
+        let msg = prompt('输入名字')
+        let pwd = prompt('输入密码')
+        // while (msg !== 'admin' || pwd !== '123') {
+        //     alert('请先登录')
+        //      msg = prompt('输入名字')
+        //      pwd = prompt('输入密码')
+        // }
+        // alert('登录成功')
+        while(true){
+            if(msg === 'admin' || pwd === '123'){
+                break
+            }else{
+                 msg = prompt('输入名字')
+                pwd = prompt('输入密码')     //此处不能再次写let定义直接赋值
+            }
+        }
+        alert('登录成功')
+
+    </script>
+</body>
+
+</html>

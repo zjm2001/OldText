@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //是一个二叉树节点的构造函数
+        function TreeNode(val) {
+            this.val = val;
+            this.left = null;
+            this.right = null;
+        }
+
+        var buildTree = function (inorder, postorder) {
+            // 如果中根遍历序列为空或者中、后根遍历序列长度不同，则返回 null
+            if (!inorder || !postorder || inorder.length !== postorder.length) {
+                return null;
+            }
+            // 取后根遍历序列的最后一个节点作为根节点值
+            const rootVal = postorder[postorder.length - 1];
+            // 用根节点值创建根节点
+            const root = new TreeNode(rootVal);
+            // 在中根遍历序列中找到根节点值的索引
+            const rootIndex = inorder.indexOf(rootVal);
+            // 构建左子树的中根遍历序列、后根遍历序列
+            const leftInorder = inorder.slice(0, rootIndex);
+            const leftPostorder = postorder.slice(0, rootIndex);
+            // 构建右子树的中根遍历序列、后根遍历序列
+            const rightInorder = inorder.slice(rootIndex + 1);
+            const rightPostorder = postorder.slice(rootIndex, postorder.length - 1); // 注意，这里通过切片去掉了最后一个元素，即根节点
+            // 递归构建左子树和右子树，并将其连接到根节点上
+            root.left = buildTree(leftInorder, leftPostorder);
+            root.right = buildTree(rightInorder, rightPostorder);
+            return root;
+        };
+
+    </script>
+</body>
+
+</html>

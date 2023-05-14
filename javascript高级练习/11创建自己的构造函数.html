@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Pig(uname,age){
+            this.uname=uname
+            this.age=age
+            this.sum=()=> console.log(`我叫${uname}`)
+        }
+        const one = new Pig('乔治',3)
+        const two = new Pig('佩奇',12)
+        one.sum()
+        console.log(one)
+        console.log(two)
+    </script>
+</body>
+</html>

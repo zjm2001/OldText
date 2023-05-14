@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .box {
+    display: flex;
+    width: 800px;
+    height: 150px;
+    background-color: pink;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .box img,
+  .one {
+    width: 100px;
+    margin: 10px;
+    height: 100px;
+    background-color: aqua;
+
+  }
+</style>
+
+<body>
+  <p>插入节点</p>
+  <p class="cr">
+    <button>父元素结尾添加</button>
+    <button>父元素开头添加</button>
+    <button>兄弟结尾添加</button>
+    <button>兄弟结尾添加</button>
+  </p>
+
+  <p>改变位置</p>
+  <p class="wz">
+    <button>去父元素结尾添加</button>
+    <button>去父元素开头添加</button>
+    <button>去兄弟结尾添加</button>
+    <button>去兄弟开头添加</button>
+  </p>
+  <div class="box">
+    <img src="" alt="1">
+    <img src="" alt="2">
+    <img src="" alt="3">
+  </div>
+  <img src="../AlloyTeam响应式/uploads/banner_1.jpg" alt="" class="one">
+  <script src="./js/jquery-3.5.1.js"></script>
+  <script>
+    //插入节点
+    // 父元素结尾添加
+    $('.cr button:eq(0)').click(function () {
+      //创建dom
+      let imgs = document.createElement('img')
+      $(imgs).attr('alt', '最后')
+      $('.box').append(imgs)
+    })
+    //父元素开头添加
+    $('.cr button:eq(1)').click(function () {
+
+      $('.box').prepend('<img src="" alt="前面添加">')
+    })
+    //兄弟开头添加
+    $('.cr button:eq(2)').click(function () {
+
+      $('.box img:eq(1)').before('<img src="" alt="兄弟开头">')
+    })
+    //兄弟结尾添加
+    $('.cr button:eq(3)').click(function () {
+
+      $('.box img:eq(1)').after('<img src="" alt="兄弟结尾">')
+    })
+    //改变位置
+    // 父亲结尾添加
+    $('.wz button:eq(0)').click(function () {
+      $('.box').append($('.one'))
+    })
+    //父亲开头添加
+    $('.wz button:eq(1)').click(function () {
+      $('.box').prepend($('.one'))
+    })
+    //兄弟结尾
+    $('.wz button:eq(2)').click(function () {
+      $('.box img:eq(1)').after($('.one'))
+    })
+    //兄弟开头
+    $('.wz button:eq(3)').click(function () {
+      $('.box img:eq(1)').before($('.one'))
+    })
+
+  </script>
+</body>
+
+</html>

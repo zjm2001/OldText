@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <button>点击</button>
+    <script>
+        let obj={
+            uname: '周家明',
+            age: 21,
+            address: '程序员'
+        }
+        // localStorage.setItem('uname', '周家明')
+        // localStorage.setItem('age', '21')
+        // localStorage.setItem('sex', '男')
+        localStorage.setItem('obj', JSON.stringify(obj))
+        console.log( JSON.parse(localStorage.getItem('obj')));
+       
+        
+        // document.querySelector('div').innerHTML = localStorage.getItem('uname')
+        document.querySelector('button').addEventListener('click',function(){
+            localStorage.removeItem('age') //清除一条
+            localStorage.clear()
+             
+        })
+    </script>
+</body>
+
+</html>

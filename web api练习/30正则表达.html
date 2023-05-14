@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+      console.log( /哈哈/.test('萨达哈哈'))   //true
+      console.log( /哈哈/.test('哈哈'))   //true
+      // 开头表示
+      console.log( /^哈哈/.test('大萨达哈哈'))  //false
+      console.log( /^哈哈/.test('哈哈萨达萨达的'))  //true
+      console.log( /^哈哈/.test('哈哈萨达萨达的'))  //true
+      // 结尾
+      console.log( /哈哈$/.test('哈哈萨达萨达的'))  //false
+      console.log( /哈哈$/.test('哈哈萨达萨达的哈哈'))  //true
+    //   精确匹配
+    console.log( /^哈$/.test('哈哈'))   //false  精确匹配只能是一个哈
+    
+
+    </script>s
+</body>
+</html>

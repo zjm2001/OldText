@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/user.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #721c24;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 20px 0;
+
+        }
+
+        table {
+            margin: 0 auto;
+            width: 800px;
+            border-collapse: collapse;
+            color: #004085;
+        }
+
+        th {
+            padding: 10px;
+            background: #cfe5ff;
+
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        td,
+        th {
+            border: 1px solid #b8daff;
+        }
+
+        td {
+            padding: 10px;
+            color: #666;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        tbody tr {
+            background: #fff;
+        }
+
+        tbody tr:hover {
+            background: #e1ecf8;
+        }
+
+        .info {
+            width: 900px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .info input {
+            width: 80px;
+            height: 25px;
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid #b8daff;
+            padding-left: 5px;
+        }
+
+        .info button {
+            width: 60px;
+            height: 25px;
+            background-color: #004085;
+            outline: none;
+            border: 0;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .info .age {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>新增学员</h1>
+    <div class="info">
+        姓名：<input type="text" class="uname">
+        年龄：<input type="text" class="age">
+        性别: <select name="gender" id="" class="gender">
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+
+        薪资：<input type="text" class="salary">
+        就业城市：<select name="city" id="" class="city">
+            <option value="北京">北京</option>
+            <option value="上海">上海</option>
+            <option value="广州">广州</option>
+            <option value="深圳">深圳</option>
+            <option value="曹县">曹县</option>
+
+        </select>
+        <button class="add">录入</button>
+    </div>
+
+    <h1>就业榜</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>薪资</th>
+                <th>就业城市</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody class="tb">
+            <!-- <tr>
+        <td>1001</td>
+        <td>欧阳霸天</td>
+        <td>19</td>
+        <td>男</td>
+
+        <td>15000</td>
+        <td>上海</td>
+        <td>
+          <a href="javascript:">删除</a>
+        </td>
+      </tr> -->
+
+
+        </tbody>
+    </table>
+    <script>
+
+        // 读取本地存储数据
+        function getData() {
+            let data = localStorage.getItem('data')
+            if (data) {
+                return JSON.parse(data)
+            } else {
+                // 如果没有数据则添加默认数据
+                let arr = [
+                    { stuId: 1001, uname: '欧阳霸天', age: 19, gender: '男', salary: '20000', city: '上海' },
+                    { stuId: 1002, uname: '令狐霸天', age: 29, gender: '男', salary: '30000', city: '北京' },
+                    { stuId: 1003, uname: '诸葛霸天', age: 39, gender: '男', salary: '2000', city: '北京' },
+                ]
+                // 写入本地存储
+                localStorage.setItem('data', JSON.stringify(arr))
+            }
+        }
+
+        //调用函数
+        getData()
+        let tbody = document.querySelector('.tb')
+        let add = document.querySelector('.add')
+        let uname = document.querySelector('.uname')
+        let age = document.querySelector('.age')
+        let gender = document.querySelector('.gender')
+        let salary = document.querySelector('.salary')
+        let city = document.querySelector('.city')
+
+        // 封装渲染函数
+        function getHtml() {
+            // 提取本地存储数据
+            let arr = getData()
+            //先干掉其他的再渲染让tbody里面的tr删除
+            tbody.innerHTML = ''
+            for (let i = 0; i < arr.length; i++) {
+                let tr = document.createElement('tr')
+                tr.innerHTML = `
+             <td>${arr[i].stuId}</td>
+        <td>${arr[i].uname}</td>
+        <td>${arr[i].age}</td>
+        <td>${arr[i].gender}</td>
+
+        <td>${arr[i].salary}</td>
+        <td>${arr[i].city}</td>
+        <td>
+          <a href="javascript:" id="${i}">删除</a>
+        </td>
+             `
+                tbody.appendChild(tr)
+                //渲染完成复原表单数据
+                uname.value = age.value = salary.value = ''
+                gender.value = '男'
+                city.value = '北京'
+
+            }
+        }
+        //渲染初始数据
+        getHtml()
+
+        //添加按钮添加数据
+        add.addEventListener('click', function () {
+            let arr = getData()
+            arr.push(
+                {
+                    stuId: 1000 + arr.length + 1,//arr[arr.length - 1].stuId + 1
+                    uname: `${uname.value}`,
+                    age: age.value,
+                    gender: `${gender.value}`,
+                    salary: `${salary.value}`,
+                    city: ` ${city.value}`
+                }
+            )
+            //添加完成后存储数据
+            localStorage.setItem('data', JSON.stringify(arr))
+            //然后渲染
+            getHtml()
+        })
+
+        //删除操作用事件委托
+        tbody.addEventListener('click', function (e) {
+            let arr = getData()
+            //使用e.target判断点击是是什么
+            // console.log(e.target.tagName);
+            if (e.target.tagName === 'A') {
+                // alert('aaaa')
+                //删除数组里面的数据
+                // 得到a的ide.target.id
+                arr.splice(e.target.id, 1)
+                localStorage.setItem('data', JSON.stringify(arr))
+                getHtml()
+            }
+
+        })
+    </script>
+</body>
+
+</html>

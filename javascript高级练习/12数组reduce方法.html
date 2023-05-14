@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr =[1,5,8,4,6]
+        //无初始值
+    const num1= arr.reduce(function(prev,current){
+            return prev+current  //上一次值加当前值 ==== sum=sun+i
+        })
+        console.log(num1)  //24
+        //又初始值
+        const num2= arr.reduce(function(prev,current){
+            return prev+current
+        },10)
+        console.log(num2)  //34   //会加上初始值
+        //箭头函数表示
+        const num3 =arr.reduce((prev,current)=>prev+current,10)
+        console.log(num3)  //34
+    </script>
+</body>
+</html>
