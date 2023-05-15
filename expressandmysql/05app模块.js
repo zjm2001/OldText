@@ -13,6 +13,8 @@ const app = express();
 //配置中间件
 app.use(session({
     secret:'token',//属性值可为任意字符串
+    cookie: {maxAge: 1800000},//作用时间 单位毫秒 5000就是5秒
+    rolling:true,//只要操作有响应 就会刷新这个时间 不然会总断
     resave:false,   //固定写法
     saveUninitialized:true
 }))

@@ -7,7 +7,7 @@ router.post('/login',(req,res)=>{
         return res.send({status:0,msg:'登录失败'})
     }
     req.session.user=req.body        //将用户数据存储到session中
-    req.session.islogin=true         //将永久花登录状态存储到session中
+    req.session.islogin=true         //登录状态存储到session中
     res.send({status:0,msg:'登录成功'})
 })
 // 获取session
