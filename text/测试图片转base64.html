@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="myForm" enctype="multipart/form-data">
+        <input type="file" name="fileInput" />
+        <input type="submit" value="Upload" />
+    </form>
+    <script src="../jQuery代码/js/jquery-3.5.1.js"></script>
+    <script>
+        $(document).on("submit", "#myForm", function (event) {
+            event.preventDefault(); // 防止表单自动提交
+            var formData = new FormData($(this)[0]); // 创建一个 FormData 对象，将表单数据打包到其中
+             console.log(formData);
+            $.ajax({
+                url: "http://127.0.0.1/add", // 后端处理文件上传的 URL
+                type: "POST",
+                data: formData,
+                processData:false,
+                contentType:false,
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (xhr, status, error) {
+                    console.error(error);
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

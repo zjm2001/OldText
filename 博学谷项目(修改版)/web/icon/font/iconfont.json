@@ -6,6 +6,41 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "764903",
+      "name": "我的资料",
+      "font_class": "mydata",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "1831603",
+      "name": "联系我们",
+      "font_class": "lianxiwomen",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "13543875",
+      "name": "我的收藏",
+      "font_class": "wodeshoucang",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "1327035",
+      "name": "注册登录",
+      "font_class": "zhucedenglu",
+      "unicode": "e734",
+      "unicode_decimal": 59188
+    },
+    {
+      "icon_id": "4320335",
+      "name": "登录",
+      "font_class": "denglu",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
       "icon_id": "1029214",
       "name": "搜索",
       "font_class": "search-2-copy",

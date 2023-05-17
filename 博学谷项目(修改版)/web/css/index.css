@@ -201,6 +201,7 @@ ul {
   align-items: center;
   background-color: #ececec;
   padding: 0.8vw 10.66666667vw;
+  z-index: 22;
 }
 .bottom div {
   width: 33.33333333vw;
@@ -216,11 +217,224 @@ ul {
 }
 .main2 {
   display: none;
-  background-color: #446adf;
-  height: 500px;
+  background-color: #f1f1f1;
+  height: 100vh;
+}
+.main2 .top {
+  display: flex;
+  justify-content: space-between;
+  height: 17.6vw;
+  background-color: #ffffff;
+  align-items: center;
+}
+.main2 .top img {
+  width: 34.66666667vw;
+  height: 12.26666667vw;
+  padding: 1.33333333vw 1.33333333vw;
+}
+.main2 .top h3 {
+  font-size: 7.46666667vw;
+  color: #28abfc;
+  font-weight: 600;
+  margin-right: 13.33333333vw;
+  letter-spacing: 2.66666667vw;
+}
+.main2 .con {
+  display: flex;
+  margin-top: 4vw;
+}
+.main2 .con .box {
+  height: 83vh;
+}
+.main2 .con .box:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
+.main2 .con .box:nth-child(1) a {
+  text-align: center;
+  height: 14.93333333vw;
+  line-height: 14.93333333vw;
+  width: 100%;
+  padding: 0 2.13333333vw;
+  color: #7b7a7a;
+}
+.main2 .con .box:nth-child(1) a.active {
+  background-color: #fff;
+}
+.main2 .con .box:nth-child(2) {
+  padding: 2.13333333vw 2.66666667vw;
+  background-color: #fff;
+  flex: 4;
+}
+.main2 .con .box .change {
+  position: relative;
+  display: block;
+}
+.main2 .con .box .change p {
+  font-size: 4.8vw;
+  color: #28abfc;
+  padding: 2.66666667vw 0;
+  font-weight: 600;
+}
+.main2 .con .box .change img {
+  height: 22.93333333vw;
+  border-radius: 1.33333333vw;
+}
+.main2 .con .box .change span {
+  position: absolute;
+  left: 9.6vw;
+  top: 21.33333333vw;
+  font-size: 4.26666667vw;
+  font-weight: 600;
+  color: #f1f1f1;
+}
+.main2 .con .box .improve {
+  padding-top: 5.33333333vw;
+}
+.main2 .con .box .improve .title {
+  font-size: 4.8vw;
+  color: #279ce6;
+  font-weight: 600;
+  padding-bottom: 4vw;
+}
+.main2 .con .box .improve p {
+  padding-bottom: 4.26666667vw;
+  padding-left: 2.66666667vw;
+}
+.main2 .con .box .improve p a {
+  margin-right: 2.66666667vw;
+  padding: 0 2.13333333vw;
+  display: inline-block;
+  height: 9.6vw;
+  text-align: center;
+  line-height: 9.6vw;
+  border: 1px solid #ccc;
+  border-radius: 1.33333333vw;
+  color: #c0c0c0;
 }
 .main3 {
   display: none;
+  height: 100vh;
+  position: relative;
+}
+.main3 .top {
+  position: relative;
+  height: 66.66666667vw;
+  background-color: #44b0f2ab;
+}
+.main3 .top .imgs {
+  position: absolute;
+  left: 39.46666667vw;
+  top: 16vw;
+  display: flex;
+  flex-direction: column;
+}
+.main3 .top .imgs img {
+  width: 21.33333333vw;
+  height: 21.33333333vw;
+  border-radius: 50%;
+}
+.main3 .top .imgs span {
+  margin-top: 2.66666667vw;
+  color: #7b7a7a;
+  font-size: 4.8vw;
+}
+.main3 .card {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 11.2vw;
+  top: 58.66666667vw;
+  width: 80vw;
+  height: 26.66666667vw;
+  background-color: rgba(255, 255, 255, 0.903);
+  border-radius: 2.13333333vw;
+}
+.main3 .card a {
+  font-size: 5.33333333vw;
+  flex: 1;
+  text-align: center;
+  margin: 0 5.33333333vw;
+  color: #7b7a7a;
+}
+.main3 .card a i {
+  text-align: center;
+  font-size: 7.46666667vw;
+}
+.main3 .card a p {
+  letter-spacing: 1.33333333vw;
+}
+.main3 .module {
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 26.66666667vw;
+  border-radius: 2.13333333vw;
+  background-color: rgba(255, 255, 255, 0.903);
+  padding: 2.66666667vw;
+}
+.main3 .module li {
+  display: flex;
+  text-align: center;
+  font-size: 4.8vw;
+  color: #7b7a7a;
+}
+.main3 .module li i {
+  flex: 1;
+  font-size: 4.8vw;
+  padding: 4vw 0;
+}
+.main3 .module li a {
+  position: relative;
+  text-align: left;
+  flex: 5;
+  padding: 4vw 0;
+  color: #7b7a7a;
+  border-bottom: 1px solid #b5b5b5b0;
+}
+.main3 .module li a::after {
+  content: '>';
+  position: absolute;
+  left: 58.66666667vw;
+  top: 5.33333333vw;
+}
+.main3 .module:hover {
+  color: #279ce6;
+}
+.main3 .logout {
+  position: absolute;
+  bottom: 80px;
+  left: 11.2vw;
+  width: 80vw;
+  height: 12vw;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.903);
+  border-radius: 6vw;
+  font-size: 4.8vw;
+  letter-spacing: 2.66666667vw;
+  color: #7b7a7a;
+}
+.newbox {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vh;
+  height: 100vh;
+  z-index: 999;
   background-color: pink;
-  height: 500px;
+}
+.newbox .login {
+  display: none;
+}
+.newbox .login .box {
+  position: absolute;
+  margin: 0 auto;
+  width: 300px;
+  height: 200px;
+  background-color: #28abfc;
+}
+.newbox .reg {
+  display: none;
 }
