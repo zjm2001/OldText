@@ -333,6 +333,7 @@
 
             .improve {
                 padding-top: (20/@vw);
+                padding-left: (10/@vw);
 
                 .title {
                     font-size: (18/@vw);
@@ -341,22 +342,24 @@
                     padding-bottom: (15/@vw);
                 }
 
-                p {
-                    padding-bottom: (16/@vw);
-                    padding-left: (10/@vw);
+                // p {
+                //     padding-bottom: (16/@vw);
+                //     padding-left: (10/@vw);
 
-                    a {
-                        margin-right: (10/@vw);
-                        padding: 0 (8/@vw);
-                        display: inline-block;
-                        height: (36/@vw);
-                        text-align: center;
-                        line-height: (36/@vw);
-                        border: 1px solid #ccc;
-                        border-radius: (5/@vw);
-                        color: #c0c0c0;
-                    }
+                a {
+                    margin-right: (10/@vw);
+                    margin-bottom: (10/@vw);
+                    padding: 0 (8/@vw);
+                    display: inline-block;
+                    height: (36/@vw);
+                    text-align: center;
+                    line-height: (36/@vw);
+                    border: 1px solid #ccc;
+                    border-radius: (5/@vw);
+                    color: #c0c0c0;
                 }
+
+                // }
             }
         }
     }
@@ -367,10 +370,15 @@
     display: none;
     height: 100vh;
     position: relative;
+
     .top {
         position: relative;
         height: (250/@vw);
-        background-color: #44b0f2ab;
+
+        background: url(../img/myinfo_login_bg.png);
+        background-color: #42abecab;
+        background-size: (110%);
+
         .imgs {
             position: absolute;
             left: (148/@vw);
@@ -385,6 +393,7 @@
             }
 
             span {
+                text-align: center;
                 margin-top: (10/@vw);
                 color: #7b7a7a;
                 font-size: (18/@vw);
@@ -392,7 +401,8 @@
         }
 
     }
-    .card{
+
+    .card {
         position: absolute;
         display: flex;
         justify-content: center;
@@ -403,23 +413,27 @@
         height: (100/@vw);
         background-color: rgba(255, 255, 255, 0.903);
         border-radius: (8/@vw);
-        a{
+
+        a {
             font-size: (20/@vw);
             flex: 1;
             text-align: center;
             margin: 0 (20/@vw);
             color: #7b7a7a;
-            i{
+
+            i {
                 text-align: center;
                 font-size: (28/@vw);
             }
-            p{
-                letter-spacing:(5/@vw);
+
+            p {
+                letter-spacing: (5/@vw);
             }
-           
+
         }
     }
-    .module{
+
+    .module {
 
         width: (300/@vw);
         // height: (150/@vw);
@@ -428,39 +442,45 @@
         border-radius: (8/@vw);
         background-color: rgba(255, 255, 255, 0.903);
         padding: (10/@vw);
-        li{
+
+        li {
             display: flex;
             text-align: center;
             font-size: (18/@vw);
             color: #7b7a7a;
-            i{
+
+            i {
                 flex: 1;
                 font-size: (18/@vw);
-                padding:(15/@vw) 0;
-              
+                padding: (15/@vw) 0;
+
             }
-            a{
+
+            a {
                 position: relative;
                 text-align: left;
-                 flex: 5;
-                 padding:(15/@vw) 0;
-                 color: #7b7a7a;
-                 border-bottom: 1px solid #b5b5b5b0;
-                 &::after{
-                    content:'>';
+                flex: 5;
+                padding: (15/@vw) 0;
+                color: #7b7a7a;
+                border-bottom: 1px solid #b5b5b5b0;
+
+                &::after {
+                    content: '>';
                     position: absolute;
                     left: (220/@vw);
                     top: (20/@vw);
 
-                 }
+                }
             }
-           
+
         }
-        &:hover{
+
+        &:hover {
             color: #279ce6;
         }
     }
-    .logout{
+
+    .logout {
         position: absolute;
         bottom: 80px;
         left: (42/@vw);
@@ -470,35 +490,156 @@
         background-color: rgba(255, 255, 255, 0.903);
         border-radius: (45/2/@vw);
         font-size: (18/@vw);
-        letter-spacing:(10/@vw);
+        letter-spacing: (10/@vw);
         color: #7b7a7a;
     }
-  
+
 }
-.newbox{
+
+.newbox {
     display: none;
     position: fixed;
     left: 0;
     top: 0;
-    width: 100vh;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 999;
-    background-color: pink;
-    .login{
+    background: url(../img/bg_login.png) no-repeat;
+    background-color: #0b92fe;
+    background-size: 100vw 100vh;
+
+    .login {
+        width: (300/@vw);
         display: none;
-        .box{
-            position: absolute;
-            margin: 0 auto;
-            width: 300px;
-            height:200px;
-            background-color: #28abfc;
-            // left: 50%;
-            // top: 50%;
-           
+        margin: 0 auto;
+
+        h3 {
+            text-align: center;
+            font-size: (20/@vw);
+            height: (50/@vw);
+            line-height: (50/@vw);
+            margin: (20/@vw);
+            color: #fff;
+
+        }
+
+        img {
+            margin: (10/@vw) (120/@vw);
+            text-align: center;
+            // margin-left: auto;
+            width: (60/@vw);
+            height: (60/@vw);
+            border-radius: (5/@vw);
+        }
+
+        .loginForm {
+
+            color: #7b7a7a;
+
+            .form-group {
+                position: relative;
+                 &:nth-child(-n+2){
+                    margin-bottom: (25/@vw);
+                 }
+                .icon {
+                    position: absolute;
+                    left: (13/@vw);
+                    top: (-2/@vw);
+                }
+                .control-label{
+                     padding-left: (30/@vw);
+                }
+                span{
+                    position: absolute;
+                    color: rgb(174, 40, 40);
+                    top: (60/@vw);
+                    left: (15/@vw);
+                }
+            }
+            .btnlogin {
+                margin-left: (15/@vw);
+                
+
+                button {
+                  
+                    color: #7b7a7a;
+                    letter-spacing: (15/@vw);
+                    width: (300/@vw);
+                    height: (30/@vw);
+                    padding: 0;
+                }
+            }
+        }
+
+        p {
+            a {
+
+                color: #7b7a7a;
+            }
 
         }
     }
-    .reg{
+
+    .reg {
         display: none;
+        width: (300/@vw);
+        margin: 0 auto;
+
+        h3 {
+            text-align: center;
+            font-size: (20/@vw);
+            height: (50/@vw);
+            line-height: (50/@vw);
+            margin: (20/@vw);
+            color: #fff;
+
+        }
+
+        img {
+            margin: (10/@vw) (120/@vw);
+            text-align: center;
+            // margin-left: auto;
+            width: (60/@vw);
+            height: (60/@vw);
+            border-radius: (5/@vw);
+        }
+
+        .regForm {
+            color: #7b7a7a;
+            .form-group {
+                position: relative;
+                 &:nth-child(-n+3){
+                    margin-bottom: (25/@vw);
+                 }
+                .icon {
+                    position: absolute;
+                    left: (13/@vw);
+                    top: (-2/@vw);
+                }
+                .control-label{
+                     padding-left: (30/@vw);
+                }
+                span{
+                    position: absolute;
+                    color: rgb(174, 40, 40);
+                    top: (60/@vw);
+                    left: (15/@vw);
+                }
+            }
+
+            .btnreg {
+                margin-left: (15/@vw);
+             
+                button {
+                  
+                    color: #7b7a7a;
+                    letter-spacing: (15/@vw);
+                    width: (300/@vw);
+                    height: (30/@vw);
+                    padding: 0;
+                }
+               
+            }
+        }
     }
 }

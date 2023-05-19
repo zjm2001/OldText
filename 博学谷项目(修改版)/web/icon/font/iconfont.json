@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1758586",
+      "name": "用户名",
+      "font_class": "yonghuming",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "5744731",
+      "name": "lock1",
+      "font_class": "mima",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "1068865",
+      "name": "6-昵称照",
+      "font_class": "6nichengzhao",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
       "icon_id": "764903",
       "name": "我的资料",
       "font_class": "mydata",

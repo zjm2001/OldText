@@ -11,7 +11,10 @@ body {
 }
 a {
   color: #333;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+a:hover {
+  text-decoration: none !important;
 }
 img {
   vertical-align: middle;
@@ -291,6 +294,7 @@ ul {
 }
 .main2 .con .box .improve {
   padding-top: 5.33333333vw;
+  padding-left: 2.66666667vw;
 }
 .main2 .con .box .improve .title {
   font-size: 4.8vw;
@@ -298,12 +302,9 @@ ul {
   font-weight: 600;
   padding-bottom: 4vw;
 }
-.main2 .con .box .improve p {
-  padding-bottom: 4.26666667vw;
-  padding-left: 2.66666667vw;
-}
-.main2 .con .box .improve p a {
+.main2 .con .box .improve a {
   margin-right: 2.66666667vw;
+  margin-bottom: 2.66666667vw;
   padding: 0 2.13333333vw;
   display: inline-block;
   height: 9.6vw;
@@ -321,7 +322,9 @@ ul {
 .main3 .top {
   position: relative;
   height: 66.66666667vw;
-  background-color: #44b0f2ab;
+  background: url(../img/myinfo_login_bg.png);
+  background-color: #42abecab;
+  background-size: 110%;
 }
 .main3 .top .imgs {
   position: absolute;
@@ -336,6 +339,7 @@ ul {
   border-radius: 50%;
 }
 .main3 .top .imgs span {
+  text-align: center;
   margin-top: 2.66666667vw;
   color: #7b7a7a;
   font-size: 4.8vw;
@@ -420,21 +424,119 @@ ul {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100vh;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   z-index: 999;
-  background-color: pink;
+  background: url(../img/bg_login.png) no-repeat;
+  background-color: #0b92fe;
+  background-size: 100vw 100vh;
 }
 .newbox .login {
+  width: 80vw;
   display: none;
-}
-.newbox .login .box {
-  position: absolute;
   margin: 0 auto;
-  width: 300px;
-  height: 200px;
-  background-color: #28abfc;
+}
+.newbox .login h3 {
+  text-align: center;
+  font-size: 5.33333333vw;
+  height: 13.33333333vw;
+  line-height: 13.33333333vw;
+  margin: 5.33333333vw;
+  color: #fff;
+}
+.newbox .login img {
+  margin: 2.66666667vw 32vw;
+  text-align: center;
+  width: 16vw;
+  height: 16vw;
+  border-radius: 1.33333333vw;
+}
+.newbox .login .loginForm {
+  color: #7b7a7a;
+}
+.newbox .login .loginForm .form-group {
+  position: relative;
+}
+.newbox .login .loginForm .form-group:nth-child(-n+2) {
+  margin-bottom: 6.66666667vw;
+}
+.newbox .login .loginForm .form-group .icon {
+  position: absolute;
+  left: 3.46666667vw;
+  top: -0.53333333vw;
+}
+.newbox .login .loginForm .form-group .control-label {
+  padding-left: 8vw;
+}
+.newbox .login .loginForm .form-group span {
+  position: absolute;
+  color: #ae2828;
+  top: 16vw;
+  left: 4vw;
+}
+.newbox .login .loginForm .btnlogin {
+  margin-left: 4vw;
+}
+.newbox .login .loginForm .btnlogin button {
+  color: #7b7a7a;
+  letter-spacing: 4vw;
+  width: 80vw;
+  height: 8vw;
+  padding: 0;
+}
+.newbox .login p a {
+  color: #7b7a7a;
 }
 .newbox .reg {
   display: none;
+  width: 80vw;
+  margin: 0 auto;
+}
+.newbox .reg h3 {
+  text-align: center;
+  font-size: 5.33333333vw;
+  height: 13.33333333vw;
+  line-height: 13.33333333vw;
+  margin: 5.33333333vw;
+  color: #fff;
+}
+.newbox .reg img {
+  margin: 2.66666667vw 32vw;
+  text-align: center;
+  width: 16vw;
+  height: 16vw;
+  border-radius: 1.33333333vw;
+}
+.newbox .reg .regForm {
+  color: #7b7a7a;
+}
+.newbox .reg .regForm .form-group {
+  position: relative;
+}
+.newbox .reg .regForm .form-group:nth-child(-n+3) {
+  margin-bottom: 6.66666667vw;
+}
+.newbox .reg .regForm .form-group .icon {
+  position: absolute;
+  left: 3.46666667vw;
+  top: -0.53333333vw;
+}
+.newbox .reg .regForm .form-group .control-label {
+  padding-left: 8vw;
+}
+.newbox .reg .regForm .form-group span {
+  position: absolute;
+  color: #ae2828;
+  top: 16vw;
+  left: 4vw;
+}
+.newbox .reg .regForm .btnreg {
+  margin-left: 4vw;
+}
+.newbox .reg .regForm .btnreg button {
+  color: #7b7a7a;
+  letter-spacing: 4vw;
+  width: 80vw;
+  height: 8vw;
+  padding: 0;
 }
