@@ -1,0 +1,17 @@
+{
+  "name": "bs",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.1",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1"
+  },
+  "dependencies": {
+    "jquery": "^3.7.0"
+  }
+}
