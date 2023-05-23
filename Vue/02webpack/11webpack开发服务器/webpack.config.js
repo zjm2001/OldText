@@ -1,0 +1,31 @@
+const path = require('path'); //导入路径模块
+const HtmlWebpackPlugin = require('html-webpack-plugin');  //导入下载的插件
+module.exports = {
+  mode: "development", //设置开发模式
+  // mode: "production",  //设置生产模式
+  devServer:{
+    port:3308, //端口号设置
+    open: true, //自动打开网页
+  },
+  entry: './src/main.js', // webpack入口  .代表当前文件夹
+  output: { // 出口
+    path: path.resolve(__dirname, 'dist'),  //拼接路径文件夹名字
+    filename: 'bundle.js',  //打包完成名称
+  },
+  //
+  plugins: [new HtmlWebpackPlugin({
+    template: './pub/index.html',   //指定用到的的模班文件
+    filename: 'index.html'   //指定生成的文件名称该文件存在内存中目录不显示
+  })],
+  module: {   //加载器配置
+    rules: [    //规则
+      //匹配.css结尾文件   然后把css插入到dom上
+      { test: /\.css$/i, use: ["style-loader", "css-loader", 'postcss-loader'], },
+      { test: /\.less$/i, use: ['style-loader', 'css-loader', 'less-loader',], },
+      { test: /\.s[ac]ss$/i, use: ['style-loader', 'css-loader', 'sass-loader',], },
+      { test: /\.(png|jpg|gif|jpeg)$/, type: "asset/resource", generator: { filename: "images/[name]_[hash:8][ext]" } },
+      //匹配icon字体图标
+      { test: /\.(eot|svg|ttf|woff|woff2)$/, type: "asset/resource", generator: { filename: "font/[name]_[hash:8][ext]" }},
+    ],
+  }
+};

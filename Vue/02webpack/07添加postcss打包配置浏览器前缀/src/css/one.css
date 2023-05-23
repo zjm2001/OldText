@@ -1,0 +1,14 @@
+li{
+    list-style: none;
+    color: #545454;
+    user-select: none;
+}
+li {
+    font-size: 30px;
+    transition: all .8;
+    user-select: none;
+  }
+  li:hover{
+     transform:translate(-10px);
+  }
+  

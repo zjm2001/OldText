@@ -14,10 +14,9 @@ module.exports = {
   module: {   //加载器配置
     rules: [    //规则
     //匹配.css结尾文件   然后把css插入到dom上
-      {test: /\.css$/i,use: ["style-loader", "css-loader"],},
+      {test: /\.css$/i,use: ["style-loader", "css-loader",'postcss-loader'],},
       {test: /\.less$/i,use: ['style-loader', 'css-loader', 'less-loader',],},
       { test: /\.s[ac]ss$/i,use: [ 'style-loader', 'css-loader','sass-loader', ], },
-      
     ],
   }
 };
