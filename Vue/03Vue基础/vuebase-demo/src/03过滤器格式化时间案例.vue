@@ -24,7 +24,7 @@
             <td>{{ obj.id }}</td>
             <td>{{ obj.name }}</td>
             <td :class="{ red: obj.price > 100 }">{{ obj.price }}</td>
-            <td>{{ obj.time }}</td>
+            <td>{{ obj.time |times }}</td>
             <td><a href="javascript:;" @click="del(obj.id)">删除</a></td>
 
             <!-- 如果价格超过100，就有red这个类 -->
@@ -64,7 +64,8 @@
 </template>
 
 <script>
-
+//引入处理事件的模块
+import moment from 'moment'
 export default {
   data() {
     return {
@@ -116,6 +117,11 @@ export default {
       this.list.splice(index, 1)
     }
   },
+  filters: {
+    times(val){
+      return moment(val).format('YYYY-MM-DD')
+    }
+  }
 
 };
 </script>

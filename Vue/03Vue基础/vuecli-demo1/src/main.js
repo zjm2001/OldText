@@ -1,6 +1,6 @@
 import Vue from 'vue'      //引入vue对象 <script src="vue.js"><script>
 import App from './App.vue'       //app.vue文件引入过来(vue项目的页面入口)
-
+import 'bootstrap/dist/css/bootstrap.css'
 Vue.config.productionTip = false       //控制台有一句提示
 
 // let a=100

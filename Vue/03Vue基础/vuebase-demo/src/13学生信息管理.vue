@@ -19,7 +19,7 @@
       <button @click="btn">添加/修改</button>
     </div>
     <div>
-      <table border="1" cellpadding="10" cellspacing="0">
+      <table  cellpadding="10" cellspacing="0">
         <tr>
           <th>序号</th>
           <th>姓名</th>
@@ -97,8 +97,8 @@ export default {
 }
 </script>
 
-<style>
-tr,td{
-  border: 1px solid #ccc;
+<style lang="">
+td,th{
+  border: 1px solid rgb(132, 129, 129);
 }
 </style>

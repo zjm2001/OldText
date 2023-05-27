@@ -24,17 +24,18 @@
             <td>{{ obj.id }}</td>
             <td>{{ obj.name }}</td>
             <td :class="{ red: obj.price > 100 }">{{ obj.price }}</td>
-            <td>{{ obj.time }}</td>
+            <td>{{ obj.time | times }}</td>
             <td><a href="javascript:;" @click="del(obj.id)">删除</a></td>
 
-            <!-- 如果价格超过100，就有red这个类 -->
-            <!-- <td class="red"></td>
-            <td></td>
-            <td><a href="#" >删除</a></td> -->
+
           </tr>
         </tbody>
-
-        <tfoot v-show="list.length ===0">
+        <tr v-if="list.length !== 0">
+          <td>统计:</td>
+          <td colspan="2">总价为:{{ allcon }}</td>
+          <td colspan="2">平均价:{{ avg }}</td>
+        </tr>
+        <tfoot v-show="list.length === 0">
           <tr>
             <td colspan="5" style="text-align: center">暂无数据</td>
           </tr>
@@ -64,18 +65,14 @@
 </template>
 
 <script>
-
+//引入处理事件的模块
+import moment from 'moment'
 export default {
   data() {
     return {
       name: "", // 名称
       price: '', // 价格
-      list: [
-        { id: 100, name: "外套", price: 199, time: new Date('2010-08-12') },
-        { id: 101, name: "裤子", price: 34, time: new Date('2013-09-01') },
-        { id: 102, name: "鞋", price: 25.4, time: new Date('2018-11-22') },
-        { id: 103, name: "头发", price: 19900, time: new Date('2020-12-12') }
-      ],
+      list: JSON.parse(localStorage.getItem('plist'))|| [],
     };
   },
   methods: {
@@ -104,7 +101,7 @@ export default {
           })
 
         }
-      
+
         this.name = ''
         this.price = ''
       }
@@ -116,6 +113,28 @@ export default {
       this.list.splice(index, 1)
     }
   },
+  filters: {
+    times(val) {
+      return moment(val).format('YYYY-MM-DD')
+    }
+  },
+  computed: {
+    allcon() {
+      return this.list.reduce((sum, obj) => { return sum + obj.price }, 0)
+    },
+    avg() {
+      return (this.allcon / this.list.length).toFixed(2)
+    }
+  },
+  watch:{
+    list:{
+      immediate:true, //立即执行网页打开就执行一次
+      deep:true, //深度监听复杂类型内变化
+      handler(){
+        localStorage.setItem('plist',JSON.stringify(this.list))
+      }
+    }
+  }
 
 };
 </script>

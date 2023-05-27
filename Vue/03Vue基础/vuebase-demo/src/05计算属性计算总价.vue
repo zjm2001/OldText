@@ -24,17 +24,18 @@
             <td>{{ obj.id }}</td>
             <td>{{ obj.name }}</td>
             <td :class="{ red: obj.price > 100 }">{{ obj.price }}</td>
-            <td>{{ obj.time }}</td>
+            <td>{{ obj.time | times }}</td>
             <td><a href="javascript:;" @click="del(obj.id)">删除</a></td>
 
-            <!-- 如果价格超过100，就有red这个类 -->
-            <!-- <td class="red"></td>
-            <td></td>
-            <td><a href="#" >删除</a></td> -->
+
           </tr>
         </tbody>
-
-        <tfoot v-show="list.length ===0">
+        <tr>
+          <td>统计:</td>
+          <td colspan="2">总价为:{{ allcon }}</td>
+          <td colspan="2">平均价:{{ avg }}</td>
+        </tr>
+        <tfoot v-show="list.length === 0">
           <tr>
             <td colspan="5" style="text-align: center">暂无数据</td>
           </tr>
@@ -64,7 +65,8 @@
 </template>
 
 <script>
-
+//引入处理事件的模块
+import moment from 'moment'
 export default {
   data() {
     return {
@@ -104,7 +106,7 @@ export default {
           })
 
         }
-      
+
         this.name = ''
         this.price = ''
       }
@@ -116,6 +118,19 @@ export default {
       this.list.splice(index, 1)
     }
   },
+  filters: {
+    times(val) {
+      return moment(val).format('YYYY-MM-DD')
+    }
+  },
+  computed: {
+    allcon() {
+      return this.list.reduce((sum, obj) => { return sum + obj.price }, 0)
+    },
+    avg() {
+      return (this.allcon / this.list.length).toFixed(2)
+    }
+  }
 
 };
 </script>
