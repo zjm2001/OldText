@@ -14,7 +14,7 @@
    $('#login').click(function(){
     $.ajax({
         type: "post",
-        url: "http://127.0.0.1:8089/login",
+        url: "http://127.0.0.1/login",
         data: {username:'admin',password:'000000'},
         success: function (res) {
             console.log(res);
@@ -25,7 +25,7 @@
    $('#user').click(function(){
     $.ajax({
         type: "get",
-        url: "http://127.0.0.1:8089/username",
+        url: "http://127.0.0.1/username",
         dataType:'json',
         success: function (res) {
             console.log(res);

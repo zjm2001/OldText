@@ -1,31 +1,27 @@
 <template>
   <div id="app">
-    <p>获取dom</p>
-    <p>目标通过id和ref获取原生dom标签</p>
-    <h1 id="h" ref="myH1">我是孤独的h1</h1>
-    <p>获取组件对象</p>
-    <Demo ref="de"></Demo>
-
-    <h1>点击改data 获取原生内容</h1>
-    <p ref ='a'>{{count}}</p>
-    <button @click="btn">点击加一观察内容</button>
-
-
-    <h1>nextTick使用场景</h1>
-    <input type="text" ref="myinp" v-if="show">
-    <button v-else @click="btn1">点击变成输入框</button>
-    <ComeHa :list="list"></ComeHa>
+    <!-- 头部 -->
+    <MyHeader  title="购物车案例" ></MyHeader>
+    <!-- 内容部分 -->
+    <div class="main">
+      <MyGoods v-for="obj in list" :key="obj.id" :arr='obj'></MyGoods>
+    </div>
+    <MyFootre @keydata="fn" :arr="list"></MyFootre>
   </div>
 </template>
 
 <script>
-import Demo from './components/Demo.vue'
-import Com from './components/COMEHa.vue'
+import MyHeader from './components/MyHeader.vue'
+import MyGoods from './components/MyGoods.vue'
+import MyFootre from './components/MyFooter.vue'
 export default {
+  components: {
+    MyHeader,
+    MyGoods,
+    MyFootre
+  },
   data() {
     return {
-      count:0,
-      show:false,
       list: [
         {
           goods_count:1,
@@ -71,42 +67,33 @@ export default {
           goods_state:true,
           id:5
         
-        }]
+        }
+      ] // 商品所有数据
     }
   },
-mounted(){
-  let h=document.querySelector('#h')
-  console.log(h);
-  console.log( this.$refs.myH1);
-  console.log( this.$refs.de.fn());
- 
-},
-components:{
-  Demo,
-  [Com.name]:Com
-},
-methods:{
-  btn(){
-    this.count++;//vue检测数据更新,开启一个Dom更新队列(异步任务)不会立即更新dom
-    console.log(this.$refs.a.innerHTML); //所有获得的是更新前的值
-    //方法一可以在updated中获取
-    // 解决方案二
-    this.$nextTick(()=>{
-      console.log(this.$refs.a.innerHTML);//能拿到更新后的
-    })
+  methods: {
+    // 接收子元素全选传递的值
+    fn(bol){
+
+    }
+
   },
-     btn1(){
-    this.show=true
-    //显示输入框后获取焦点
-    // this.$refs.myinp.focus()  //报错原因data变换更新是异步的 input还没有挂载到真实dom无法获取没有这个方法
-    this.$nextTick(()=>{
-      this.$refs.myinp.focus() 
-    })
+  created(){
+    // this.$axios({
+    //   url: "/api/cart"
+    // }).then(res => {
+    //   console.log(res);
+    //   if(res.data.list.length >0){
+    //     this.list = res.data.list
+    //   }
+     
+    // })
   }
-}
 }
 </script>
 
-<style>
-
+<style scoped>
+.main{
+  padding: 45px 0;
+}
 </style>
