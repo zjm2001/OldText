@@ -10,9 +10,8 @@
     <!-- 下拉内容 -->
     <div class="container" v-show="isShow">
          
-      <slot>
-        <!-- //这里写插槽默认内容 -->
-        <h1>我是不传递数据的默认内容</h1>
+      <slot :row="obj">
+         <p>{{obj.one}}</p>
       </slot>
     </div>
   </div>
@@ -23,6 +22,10 @@ export default {
   data() {
     return {
       isShow: false,
+      obj:{
+        one:'无名氏',
+        two:'啦啦啦的'
+      }
     };
   },
 };
