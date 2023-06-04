@@ -1,4 +1,4 @@
-# vue-router-demo
+# vant-demo
 
 ## Project setup
 ```
