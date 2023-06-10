@@ -3,7 +3,10 @@
     <!-- 头部的导航 -->
     <van-nav-bar :title="title" />
     <!-- 二级路由挂载点 -->
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+    
     <!-- 底部导航条 -->
     <div class="bottom">
         <van-tabbar v-model="active">

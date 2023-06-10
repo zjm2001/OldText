@@ -1,7 +1,10 @@
 <template>
   <div>
     <!-- 一级路由显示 -->
-  <router-view></router-view>
+    <keep-alive>
+     <router-view></router-view>
+    </keep-alive>
+ 
   </div>
 </template>
 
