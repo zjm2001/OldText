@@ -1,13 +1,24 @@
 <script setup>
-import {ref,computed} from 'vue'
-const list =ref([1,5,3,1,4,6,8])
-//声明一个计算属性,吧list中大于二的过滤出来
-const computedList= computed(()=>{
-  return list.value.filter(item =>item>2)
-})
-
+  import CenterCom from './components/center-com.vue'
+  import { provide,ref } from "vue";
+  const count =ref(100)
+  provide('count',count)
+ const chengeCount =()=>{
+  count.value++
+ }
+ provide('setCount',(newCount)=>{
+  count.value-=newCount
+ })
 </script>
 <template>
-  <h1>原始数据:{{list}}</h1>
-  <h1>计算后数据数据:{{computedList}}</h1>
+  <div class="box">
+     <h1>顶层组件 <button @click="chengeCount">改变count</button></h1>  
+     <CenterCom></CenterCom>
+  </div>
+ 
 </template>
+<style scoped>
+  .box{
+    text-align: center;
+  }
+</style>
