@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+     let data = {}
+     let name='zjm'
+    Object.defineProperty(data, 'name', {
+     
+      get() {
+        console.log('你访问了data1的name属性')
+        return name   //return一个变量
+      },
+      
+      set(newValue) {
+        console.log('你修改了data1的name属性最新的值为', newValue)
+        name=newValue   //改变值进行修改
+      }
+    })
+</script>
+</html>

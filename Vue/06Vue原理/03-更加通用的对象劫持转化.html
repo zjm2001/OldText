@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="txt"></h1>
+</body>
+<script>
+
+    //vue中提前吧所有都放到了data中
+    // data(){
+    //     return {
+    //         name: 'dd',
+    //         age:18
+    //     }
+    // }
+    // 如何吧我们所有的都变成set get的方式
+    let data = {
+        name: 'dd',
+        age: 18,
+        height: 180
+    }
+
+    Object.keys(data).forEach(key => {
+        observe(data, key, data[key])
+    })
+    /**
+   * @description: 把对象的属性转成get和set的形式
+   * @param {*} data  要处理的对象
+   * @param {*} key  要处理的对象属性名
+   * @param {*} value  要处理的对象属性名对应的初始值
+   * @return {*}
+   */
+    function observe(data, key, val) {
+        Object.defineProperty(data, key, {
+            get() {
+                return val
+            },
+            set(newVal) {
+                val = newVal
+                const txt = document.querySelector('.txt')
+                txt.innerHTML = data.name
+            }
+        })
+    }
+
+</script>
+
+</html>
