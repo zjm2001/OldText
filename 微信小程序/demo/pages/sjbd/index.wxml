@@ -1,0 +1,33 @@
+<!--pages/数据绑定/index.wxml-->
+<view>
+ <text>{{msg}}</text>
+</view>
+<view wx:for="{{list}}" wx:key="index">
+ <text>{{index}}</text>
+ <text>{{item.name}}</text>   
+ <text>{{item.age}}</text>
+ <text>{{item.sex}}</text>
+</view>
+<view>测试三元运算符{{num}}
+{{num>5 ? '大于五1':'小于或等于五'}}
+</view>
+<view class='f' bindtap="onlll">
+<button type="default" >点击</button>
+</view>
+<view> -----------------------------------------------------</view>
+<button type="default" bindtap="onclick">测试tap事件</button>
+<view> -----------------------------------------------------</view>
+<view>{{count}}</view>
+<button bindtap="addCount" >count++</button>
+<view> -----------------------------------------------------</view>
+<button bindtap="btn" data-info='{{2}}'>传递参数</button>
+<view> -----------------------------------------------------</view>
+<view>{{txt}}</view>
+  <input type="number" bindinput="fn" /> 
+
+  <view>
+  <text wx:if="{{isok}}">我是a条件为true我出先</text>
+  <text wx:else="">我是b条件为false我出先</text>
+  <button bindtap="onisok">改变isok值</button>
+  </view>
+

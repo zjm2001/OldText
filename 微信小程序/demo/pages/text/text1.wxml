@@ -1,0 +1,6 @@
+<!--pages/text/text1.wxml-->
+<view class="con">
+ <view>1</view>
+ <view>2</view>
+ <view>3</view>
+</view>

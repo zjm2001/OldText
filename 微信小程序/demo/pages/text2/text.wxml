@@ -1,0 +1,11 @@
+<!--pages/text组件/text.wxml-->
+<view>
+ 能够是的长按赋值的文本 手机号:
+ <text selectable="true"> 183555555645</text>
+</view>
+<rich-text nodes="<h1>我是rich-text渲染的h1</h1>"/>
+<button>普通button</button>
+<button size="mini" type="default">普通button</button>
+<button plain>llll</button>
+<image/>
+<image src="/images/1.jpeg" mode=""/>

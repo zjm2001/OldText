@@ -1,7 +1,14 @@
 {
   "pages":[
+    "pages/sjbd/index",
+    "pages/text2/text",
+    "pages/swiper/text",
+    "pages/scroll-view/text",
+    "pages/text/text1",
+    "pages/list/list",
     "pages/index/index",
     "pages/logs/logs"
+   
   ],
   "window":{
     "backgroundTextStyle":"light",

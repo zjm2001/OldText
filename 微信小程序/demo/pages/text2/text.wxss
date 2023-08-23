@@ -1,0 +1,4 @@
+/* pages/text组件/text.wxss */
+image{
+  border: 1px solid red;
+}

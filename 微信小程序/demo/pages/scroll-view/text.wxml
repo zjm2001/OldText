@@ -1,0 +1,6 @@
+<!--pages/scroll-view/text.wxml-->
+<scroll-view class='box' scroll-y>
+  <view>11</view>
+  <view>33</view>
+  <view>22</view>
+</scroll-view>

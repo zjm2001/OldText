@@ -1,0 +1,16 @@
+<!--pages/swiper/text.wxml-->
+<swiper class="con" indicator-dots autoplay='true'>
+  <swiper-item>
+    <view>第一章</view>
+  </swiper-item>
+  <swiper-item>
+    <view>第二章</view>
+  </swiper-item>
+  <swiper-item>
+    <view>第三章</view>
+  </swiper-item>
+  <swiper-item>
+    <view>第四章</view>
+  </swiper-item>
+</swiper>
+
