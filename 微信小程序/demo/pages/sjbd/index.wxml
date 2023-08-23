@@ -30,4 +30,4 @@
   <text wx:else="">我是b条件为false我出先</text>
   <button bindtap="onisok">改变isok值</button>
   </view>
-
+  <text hidden="{{isok}}">我是隐藏显示</text>
