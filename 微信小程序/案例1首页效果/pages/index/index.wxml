@@ -1,0 +1,20 @@
+<view>
+<!-- 这是一个轮播图区域 -->
+<swiper indicator-dots  	autoplay>
+  <swiper-item wx:for="{{swiperList}}" wx:key="item.id">
+    <image src="{{item.image}}" mode=""/>
+  </swiper-item>
+</swiper>
+</view>
+<!-- 九宫格区域 -->
+<view class="grid-list">
+<view class="grid-item" wx:for="{{categoriesList}}" wx:key="id">
+<image src="{{item.icon}}" mode=""/>
+<text>{{item.name}}</text>
+</view>
+</view>
+<!-- 图片区域 -->
+<view class="img-box">
+<image src="/image/link-01.png" mode="widthFix"/>
+<image src="/image/link-02.png" mode="widthFix"/>
+</view>
