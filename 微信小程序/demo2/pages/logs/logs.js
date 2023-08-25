@@ -5,6 +5,11 @@ Page({
   data: {
     logs: []
   },
+  fn2(){
+    wx.navigateBack({
+      delta:1
+    })
+  },
   onLoad() {
     this.setData({
       logs: (wx.getStorageSync('logs') || []).map(log => {

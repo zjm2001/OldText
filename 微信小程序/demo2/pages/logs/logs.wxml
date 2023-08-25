@@ -4,3 +4,5 @@
     <text class="log-item">{{index + 1}}. {{log.date}}</text>
   </block>
 </view>
+<navigator open-type="navigateBack" delta="1">返回上一级</navigator>
+<button type="default" bindtap="fn2">后退编程式导航</button>

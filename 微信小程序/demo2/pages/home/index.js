@@ -34,6 +34,21 @@ Page({
       }
     })
   },
+  fn(){
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
+  fn1(){
+  wx.navigateTo({
+    url: '/pages/logs/logs',
+  })
+  },
+  fn3(){
+    wx.navigateTo({
+      url: '/pages/info/index?name=zjm111&age=20',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

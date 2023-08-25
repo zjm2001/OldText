@@ -1,2 +1,8 @@
 <!--pages/home/index.wxml-->
-
+<text>这是主页</text>
+<navigator url="/pages/index/index" open-type="switchTab">这是跳转tabBar</navigator>
+<navigator url="/pages/logs/logs" open-type="navigate">这是跳转非tabBar</navigator>
+<button type="default" bindtap="fn">编程式导航跳转tabBar</button>
+<button type="default" bindtap="fn1">编程式导航跳转非tabBar</button>
+<navigator url="/pages/info/index?name=zjm&age=20">这是跳转info并传参</navigator>
+<button type="default" bindtap="fn3">编程式跳转传参</button>
