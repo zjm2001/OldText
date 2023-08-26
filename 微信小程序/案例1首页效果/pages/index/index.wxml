@@ -1,17 +1,17 @@
 <view>
 <!-- 这是一个轮播图区域 -->
 <swiper indicator-dots  	autoplay>
-  <swiper-item wx:for="{{swiperList}}" wx:key="item.id">
+  <swiper-item wx:for="{{swiperList}}" wx:key="id">
     <image src="{{item.image}}" mode=""/>
   </swiper-item>
 </swiper>
 </view>
 <!-- 九宫格区域 -->
 <view class="grid-list">
-<view class="grid-item" wx:for="{{categoriesList}}" wx:key="id">
+<navigator class="grid-item" wx:for="{{categoriesList}}" wx:key="id" url="/pages/shoplist/shoplist?id={{item.id}}&title={{item.name}}">
 <image src="{{item.icon}}" mode=""/>
 <text>{{item.name}}</text>
-</view>
+</navigator>
 </view>
 <!-- 图片区域 -->
 <view class="img-box">
