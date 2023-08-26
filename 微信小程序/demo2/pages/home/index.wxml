@@ -6,3 +6,13 @@
 <button type="default" bindtap="fn1">编程式导航跳转非tabBar</button>
 <navigator url="/pages/info/index?name=zjm&age=20">这是跳转info并传参</navigator>
 <button type="default" bindtap="fn3">编程式跳转传参</button>
+<view>{{m1.toUpper(username)}}</view>
+<view>{{m2.toLower(name)}}</view>
+<wxs module="m1">
+module.exports.toUpper=function(str){
+return str.toUpperCase()
+}
+</wxs>
+
+<!-- // 外联引入脚本 -->
+<wxs src="../../utils/tools.wxs" module="m2"/>
