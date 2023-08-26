@@ -1,2 +1,7 @@
 <!--pages/info/index.wxml-->
 <text>pages/info/index.wxml</text>
+<view>
+<text>count值为: {{count}}</text>
+<button type="default" bindtap="fn">count++</button>
+</view>
+<view class="box"></view>

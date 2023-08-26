@@ -3,7 +3,8 @@
     "pages/home/index",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/info/index"
+    "pages/info/index",
+    "pages/ymcd/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -24,6 +25,10 @@
           {
           "pagePath": "pages/index/index",
           "text": "其他"
+        },
+          {
+          "pagePath": "pages/ymcd/index",
+          "text": "页面触底"
         }
       ]
       },

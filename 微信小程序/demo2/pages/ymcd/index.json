@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "上拉刷新案例",
+  "enablePullDownRefresh":true,
+  "backgroundTextStyle": "dark"
+}

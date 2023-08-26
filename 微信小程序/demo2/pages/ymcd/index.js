@@ -1,25 +1,43 @@
-// pages/info/index.js
+// pages/ymcd/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    count: 0
+    colorList:[],
+    isOk:false
 
   },
-  fn() {
-    this.setData({
-      count: this.data.count + 1
-    })
-  },
-
+getColors(){
+  this.setData({
+    isOk:true
+  })
+  wx.showLoading({
+    title: '数据加载中....',  //开启加载效果
+  })
+  wx.request({
+    url: 'https://applet-base-api-t.itheima.net/api/color',
+    method:'GET',
+    success:({data:res})=>{
+      // console.log(res);
+      this.setData({
+        colorList:[...this.data.colorList,...res.data]
+      })
+    },
+    complete:()=>{
+      wx.hideLoading() //隐藏加载效果
+      this.setData({
+        isOk:false
+      })
+    }
+  })
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(options);
-
+    this.getColors()
   },
 
   /**
@@ -54,17 +72,18 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh() {
-this.setData({
-  count:0
-})
-wx.stopPullDownRefresh()
+    this.getColors()
+    wx.stopPullDownRefresh()
+   
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-    console.log('触底了');
+    if(this.data.isOk) return
+    this.getColors()
 
   },
 
