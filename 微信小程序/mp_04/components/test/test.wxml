@@ -1,0 +1,5 @@
+<!--components/test/test.wxml-->
+<text>components/test/test.wxml</text>
+<view>
+  我是组件test
+  </view>

@@ -1,0 +1,5 @@
+<!--components/demo/demo.wxml-->
+<text>components/demo/demo.wxml</text>
+<view>
+ 我是demo组件
+</view>
