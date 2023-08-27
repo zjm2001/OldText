@@ -2,4 +2,4 @@
 <text>pages/home/home.wxml</text>
 <!-- 引用组件 -->
 <my-test></my-test>
-<my-demo></my-demo>
+<my-demo max="10"></my-demo>

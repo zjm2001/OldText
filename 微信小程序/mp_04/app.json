@@ -11,7 +11,8 @@
     "navigationBarTextStyle": "black"
   },
   "usingComponents": {
-    "my-demo":"/components/demo/demo"
+    "my-demo":"/components/demo/demo",
+    "my-demo2":"/components/demo2/demo2"
   },
   "tabBar": {
     "list": [

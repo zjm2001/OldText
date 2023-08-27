@@ -1,0 +1,8 @@
+/* components/demo2/demo2.wxss */
+.colorBox{
+  line-height: 200rpx;
+  font-size: 24rpx;
+  color: wheat;
+  text-shadow: 0 0 2rpx black;
+  text-align: center;
+}

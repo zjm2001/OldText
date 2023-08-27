@@ -3,3 +3,8 @@
 <view>
  我是demo组件
 </view>
+<view>{{count}}</view>
+<button type="default" bindtap="fn">+1</button>
+<view>
+<text>n1: {{n1}} + n2: {{n2}} = {{sum}}</text>
+</view>
