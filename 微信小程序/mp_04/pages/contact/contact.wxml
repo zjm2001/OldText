@@ -1,3 +1,5 @@
 <!--pages/contact/contact.wxml-->
-<text>pages/contact/contact.wxml</text>
-<my-demo></my-demo>
+<my-demo3>
+<text slot='one'>我是插槽插入数据1</text>
+<text slot='two'>我是插槽插入数据2</text>
+</my-demo3>

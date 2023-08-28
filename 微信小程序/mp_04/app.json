@@ -12,7 +12,8 @@
   },
   "usingComponents": {
     "my-demo":"/components/demo/demo",
-    "my-demo2":"/components/demo2/demo2"
+    "my-demo2":"/components/demo2/demo2",
+    "my-demo3":"/components/demo3/demo3"
   },
   "tabBar": {
     "list": [

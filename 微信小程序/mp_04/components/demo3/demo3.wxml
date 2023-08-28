@@ -1,0 +1,7 @@
+<!--components/demo3/demo3.wxml-->
+<view>
+<slot name='one'></slot>
+<view>这个显示的是我组件的</view>
+<slot name='two'></slot>
+</view>
+

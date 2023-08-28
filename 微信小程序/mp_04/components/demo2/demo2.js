@@ -57,5 +57,30 @@ Component({
         fullColor:`${obj.r},${obj.g},${obj.b}`
       })
     }
+  },
+  created(){
+    console.log('大萨达');
+  },
+  attached (){
+    console.log('发发发');
+  },
+  lifetimes:{
+    created(){
+      console.log('大大大');
+    },
+    attached (){
+      console.log('发发发22');
+    },
+  },
+  pageLifetimes:{
+    show(){
+      this.setData({
+        rgb:{
+          r: 150,
+          g: 50,
+          b: 50
+        }
+      })
+    }
   }
 })
