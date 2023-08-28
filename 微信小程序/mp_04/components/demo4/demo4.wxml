@@ -1,0 +1,8 @@
+<!--components/demo4/demo4.wxml-->
+<view>
+我是子组件的count:{{count}}
+<button bindtap="add">count++</button>
+</view>
+<view>
+使用再behavior中定义的username为:{{username}}
+</view>

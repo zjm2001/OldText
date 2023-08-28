@@ -5,9 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    count:0
 
   },
-
+   syg(e){
+    this.setData({
+      count:e.detail.value
+    })
+   },
+   addBtn(){
+     const child=this.selectComponent('.my-demo')
+     child.setData({count:child.properties.count + 1 })  //调用子组件都setData
+     child.add()   //调用子组件的add方法
+   },
   /**
    * 生命周期函数--监听页面加载
    */

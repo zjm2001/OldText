@@ -1,5 +1,9 @@
 <!--pages/contact/contact.wxml-->
-<my-demo3>
+<!-- <my-demo3>
 <text slot='one'>我是插槽插入数据1</text>
 <text slot='two'>我是插槽插入数据2</text>
-</my-demo3>
+</my-demo3> -->
+我是父组件的count:{{count}}
+<my-demo4 count='{{count}}' bind:addBtn='syg' class="my-demo"></my-demo4>
+<!-- <my-demo4 count='{{count}}' bindsync='syg'></my-demo4> -->
+<button bindtap="addBtn">获取子组件实例按钮</button>

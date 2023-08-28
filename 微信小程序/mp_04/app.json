@@ -13,7 +13,8 @@
   "usingComponents": {
     "my-demo":"/components/demo/demo",
     "my-demo2":"/components/demo2/demo2",
-    "my-demo3":"/components/demo3/demo3"
+    "my-demo3":"/components/demo3/demo3",
+    "my-demo4":"/components/demo4/demo4"
   },
   "tabBar": {
     "list": [
