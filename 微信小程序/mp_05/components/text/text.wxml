@@ -1,0 +1,6 @@
+<!--components/text/text.wxml-->
+<view>值一:{{numA}}</view>
+<view>值二:{{numB}}</view>
+<view>和为:{{sun}}</view>
+<button bindtap="btnHandler" data-step="{{1}}">值二的值+1</button>
+<button bindtap="btnHandler" data-step="{{-1}}">值二的值-1</button>

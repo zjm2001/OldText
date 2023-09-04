@@ -1,2 +1,10 @@
 <!--pages/message/message.wxml-->
-<text>pages/message/message.wxml</text>
+<view>值一:{{numA}}</view>
+<view>值二:{{numB}}</view>
+<view>和为:{{sun}}</view>
+<button bindtap="btnHandler" data-step="{{1}}">值一的值+1</button>
+<button bindtap="btnHandler" data-step="{{-1}}">值一的值-1</button>
+
+<view>
+<my-text></my-text>
+</view>
