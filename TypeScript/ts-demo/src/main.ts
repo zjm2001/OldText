@@ -1,15 +1,4 @@
-
-let message = "Hello World";
-console.log(message);
-console.log(message);
-console.log(message);
-console.log(message);
-console.log(message);
-console.log(message);
-let h : Number = 0
-let d : Number = 1
-var res:number = 0
-setInterval(()=>{
-    console.log(res);
-    
-},1000)
+import'./01类型注解'
+import'./02数类型 '
+import'./03类型别名'
+import './04函数类型'
