@@ -7,3 +7,8 @@ import './06可选参数'
 import './07对象类型'
 import './08接口类型的使用'
 import './09接口类型的继承'
+import './10元组类型'
+import './11类型推论'
+import './12字面量类型'
+import './13枚举类型'
+
