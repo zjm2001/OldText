@@ -62,7 +62,16 @@ const btn = () => {
     }
 
 }
-
+///内置类型声明文件
+const strs =['a','b','c']
+//鼠标放forEach上查看类型
+strs.forEach
+//jq
+import $ from 'jquery';
+//会报错没有类型声明文件
+//安装第三方  npm i --save-dev @types/jquery   别人适配的jquery的类型声明文件
+//$.ajax //安装完成后不仅不报错也会有代码提示
+import Son1 from '@/components/Son1.vue'
 </script>
 
 <template>
@@ -77,6 +86,8 @@ const btn = () => {
     <img ref="gx" src="https://img2.baidu.com/it/u=2969114901,1558934322&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=529" alt="">
 
     <button @click="btn">获取图片dom</button>
+    <h1>22222222222222222222222222222222222222222222</h1>
+    <Son1></Son1>
 </template>
 
 <style scoped></style>

@@ -1,5 +1,5 @@
 {
-  "name": "ts-vue3",
+  "name": "ts-admin",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,12 +10,12 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
-    "jquery": "^3.7.1",
+    "axios": "^1.5.0",
+    "pinia": "^2.1.6",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
-    "@types/jquery": "^3.5.19",
     "@types/node": "^18.17.17",
     "@vitejs/plugin-vue": "^4.3.4",
     "@vue/tsconfig": "^0.4.0",
